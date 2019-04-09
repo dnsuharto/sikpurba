@@ -65,7 +65,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ action('StafDokumen\DashboardController@koleksi') }}">Data Koleksi <span class="sr-only" >(current)</span></a>
                         </li>
+                        
                         @endif
+
 
                         @if($employee->role == 'kepala_museum')
                         <li class="nav-item">

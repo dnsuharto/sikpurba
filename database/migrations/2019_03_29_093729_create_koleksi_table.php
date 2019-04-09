@@ -15,6 +15,7 @@ class CreateKoleksiTable extends Migration
     {
         Schema::create('koleksi', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+            $table->string('gambar_koleksi');
             $table->string('nomor_koleksi', 30)->unique();
             $table->string('nama_koleksi');
             $table->enum('jenis_benda',['batuan','fosil','lainnya']);

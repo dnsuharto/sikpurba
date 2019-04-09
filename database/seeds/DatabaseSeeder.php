@@ -27,8 +27,6 @@ class DatabaseSeeder extends Seeder
      
      		/*data input employee*/
      		
-
-	       	
        		$employee = new Employee;
 	        $employee -> email = 'stafperaga@sikpurba.com';
 	        $employee -> nik = '3411151125';
@@ -56,6 +54,7 @@ class DatabaseSeeder extends Seeder
 
 	       	/*Data Koleksi*/
 	       	$koleksi = new Koleksi;
+	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->nomor_koleksi = 'A123';
 	       	$koleksi->nama_benda = 'Batu Kecubung';
 	       	$koleksi->jenis_benda = 'batuan';
@@ -65,6 +64,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->penemu = 'Tim Geologi';
 
 	       	$koleksi = new Koleksi;
+	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->nomor_koleksi = 'B123';
 	       	$koleksi->nama_benda = 'Tulang Belikat Homosafiens';
 	       	$koleksi->jenis_benda = 'fosil';
@@ -74,6 +74,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->penemu = 'Noval';
 
 	       	$koleksi = new Koleksi;
+	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->nomor_koleksi = 'C123';
 	       	$koleksi->nama_benda = 'Etanol';
 	       	$koleksi->jenis_benda = 'lainnya';

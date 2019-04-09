@@ -26,6 +26,7 @@ Route::get('/staf_peraga/dashboard', 'StafPeraga\DashboardController@index');
 Route::get('/staf_peraga/dashboard/pengajuan', 'StafPeraga\DashboardController@pengajuan');
 
 Route::get('/staf_dokumen/dashboard', 'StafDokumen\DashboardController@index');
+Route::get('/staf_dokumen/dashboard/koleksi', 'StafDokumen\DashboardController@koleksi');
 
 Route::get('/kepala_museum/dashboard', 'KepalaMuseum\DashboardController@index');
 
