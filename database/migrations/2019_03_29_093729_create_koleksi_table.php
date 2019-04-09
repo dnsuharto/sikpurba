@@ -21,7 +21,7 @@ class CreateKoleksiTable extends Migration
             $table->enum('jenis_benda',['batuan','fosil','lainnya']);
             $table->string('asal_benda');
             $table->date('tgl_ditemukan');
-            $table->integer('usia');
+            $table->integer('usia')->nullable();
             $table->string('penemu');
             $table->timestamps();
         });
