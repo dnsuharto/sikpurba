@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->asal_benda = 'Pangkalan Bun';
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
 	       	$koleksi->usia = '600';
-	       	$penemu->penemu = 'Tim Geologi';
+	       	$koleksi->penemu = 'Tim Geologi';
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi->nomor_koleksi = 'B123';
@@ -71,7 +71,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->asal_benda = 'Ujungpandang';
 	       	$koleksi->tgl_ditemukan = '2012-03-10';
 	       	$koleksi->usia = '1500';
-	       	$penemu->penemu = 'Noval';
+	       	$koleksi->penemu = 'Noval';
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi->nomor_koleksi = 'C123';
@@ -80,7 +80,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->asal_benda = 'Palembang';
 	       	$koleksi->tgl_ditemukan = '2010-12-03';
 	       	$koleksi->usia = '';
-	       	$penemu->penemu = 'Noval';
+	       	$koleksi->penemu = 'Noval';
 
     }
 }
