@@ -5,7 +5,7 @@
 	<table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">ID Pegawai</th>
+      <th scope="col">NIK</th>
       <th scope="col">Nama</th>
       <th scope="col">Email</th>
       <th scope="col">Role</th>
@@ -68,6 +68,7 @@
 	  </td>
     </tr>
     -->
+    
   </tbody>
 </table>
 
