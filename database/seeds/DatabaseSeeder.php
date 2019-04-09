@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use App\User;
 use App\Employee;
 use App\pengunjung;
+use App\Koleksi;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +25,10 @@ class DatabaseSeeder extends Seeder
 	       	$employee -> password = bcrypt('12345');
 	       	$employee -> save();
      
+     		/*data input employee*/
+     		
 
+	       	
        		$employee = new Employee;
 	        $employee -> email = 'stafperaga@sikpurba.com';
 	        $employee -> nik = '3411151125';
@@ -47,6 +52,35 @@ class DatabaseSeeder extends Seeder
 	        $employee -> role = 'kepala_museum';
 	       	$employee -> password = bcrypt('12345');
 	       	$employee -> save();
+	       	
+
+	       	/*Data Koleksi*/
+	       	$koleksi = new Koleksi;
+	       	$koleksi->nomor_koleksi = 'A123';
+	       	$koleksi->nama_benda = 'Batu Kecubung';
+	       	$koleksi->jenis_benda = 'batuan';
+	       	$koleksi->asal_benda = 'Pangkalan Bun';
+	       	$koleksi->tgl_ditemukan = '2018-05-24';
+	       	$koleksi->usia = '600';
+	       	$penemu->penemu = 'Tim Geologi';
+
+	       	$koleksi = new Koleksi;
+	       	$koleksi->nomor_koleksi = 'B123';
+	       	$koleksi->nama_benda = 'Tulang Belikat Homosafiens';
+	       	$koleksi->jenis_benda = 'fosil';
+	       	$koleksi->asal_benda = 'Ujungpandang';
+	       	$koleksi->tgl_ditemukan = '2012-03-10';
+	       	$koleksi->usia = '1500';
+	       	$penemu->penemu = 'Noval';
+
+	       	$koleksi = new Koleksi;
+	       	$koleksi->nomor_koleksi = 'C123';
+	       	$koleksi->nama_benda = 'Etanol';
+	       	$koleksi->jenis_benda = 'lainnya';
+	       	$koleksi->asal_benda = 'Palembang';
+	       	$koleksi->tgl_ditemukan = '2010-12-03';
+	       	$koleksi->usia = '';
+	       	$penemu->penemu = 'Noval';
 
     }
 }
