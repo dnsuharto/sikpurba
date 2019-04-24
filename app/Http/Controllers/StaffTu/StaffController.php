@@ -16,7 +16,7 @@ class StaffController extends Controller
     public function index()
     {
         $staffs = Staff::get();
-        
+    
         return view('staff_tu.staff.index')->with('staffs', $staffs);
     }
 
@@ -27,7 +27,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        return view('staff_tu.staff.create');
     }
 
     /**
@@ -38,7 +38,30 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+        'email' => 'required|email|unique:staffs|max:255',
+        'nik' => 'required|numeric',
+        'nama' => 'required'
+        ],
+        [
+        'email.required' => 'Email tidak boleh kosong',
+        'email.email' => 'Email harus sesuai dengan format',
+        'email.unique' => 'Email sudah terdaftar',
+        'email.max' => 'Email terlalu panjang',
+        'nik.required' => 'NIK tidak boleh kosong',
+        'nik.numeric' => 'NIK harus angka',
+        'nama.required' => 'Nama tidak boleh kosong'
+        ]);
+
+        $staff = new Staff;
+        $staff -> email = $request->input('email');
+        $staff -> nik = $request->input('nik');
+        $staff -> nama = $request->input('nama');
+        $staff -> role = $request->input('role');
+        $staff -> password = bcrypt('12345');
+        $staff -> save();
+
+         return redirect()->action('StaffTu\StaffController@index');
     }
 
     /**

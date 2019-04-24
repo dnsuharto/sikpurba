@@ -4,6 +4,11 @@
 <!--
 <style> table{border: 3px} </style>
 -->
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    <a href="{{ action('StaffTu\StaffController@create') }}" class="btn btn-primary btn-sm active" style="float: right;" role="button" aria-pressed="true">Tambah Staff</a>
+  </div>
 	<table class="table">
   	<thead class="thead-dark">
     <tr>
@@ -29,6 +34,8 @@
     </tr>
     @endforeach
   </tbody>
-</table>
+  </table>
+</div>
 
+  </div>
 @endsection
