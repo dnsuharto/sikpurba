@@ -6,12 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Employee extends Authenticatable
+class Staff extends Authenticatable
 {
 
     use Notifiable;
 
-    protected $table = 'employees';
+    protected $table = 'staffs';
 
     /**
      * The attributes that are mass assignable.

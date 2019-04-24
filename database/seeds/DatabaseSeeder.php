@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
-use App\Employee;
+use App\Staff;
 use App\pengunjung;
 use App\Koleksi;
 
@@ -17,70 +17,83 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         
-	        $employee = new Employee;
-	        $employee -> email = 'staftu@sikpurba.com';
-	        $employee -> nik = '3411151106';
-	        $employee -> nama = 'muhammad';
-	        $employee -> role = 'staf_tu';
-	       	$employee -> password = bcrypt('12345');
-	       	$employee -> save();
+	        $staff = new Staff;
+	        $staff -> email = 'stafftu@sikpurba.com';
+	        $staff -> nik = '3411151106';
+	        $staff -> nama = 'muhammad';
+	        $staff -> role = 'staff_tu';
+	       	$staff -> password = bcrypt('12345');
+	       	$staff -> save();
      
-     		/*data input employee*/
-     		
-       		$employee = new Employee;
-	        $employee -> email = 'stafperaga@sikpurba.com';
-	        $employee -> nik = '3411151125';
-	        $employee -> nama = 'nisa';
-	        $employee -> role = 'staf_peraga';
-	       	$employee -> password = bcrypt('12345');
-	       	$employee -> save();
+     		/*data input staff*/
 
-	       	$employee = new Employee;
-	        $employee -> email = 'stafdokumen@sikpurba.com';
-	        $employee -> nik = '3411151185';
-	        $employee -> nama = 'bambang';
-	        $employee -> role = 'staf_dokumen';
-	       	$employee -> password = bcrypt('12345');
-	       	$employee -> save();
+     		/*data  staff peraga*/
+       		$staff = new Staff;
+	        $staff -> email = 'staffperaga1@sikpurba.com';
+	        $staff -> nik = '3411151125';
+	        $staff -> nama = 'nisa';
+	        $staff -> role = 'staff_peraga';
+	       	$staff -> password = bcrypt('12345');
+	       	$staff -> save();
 
-	       	$employee = new Employee;
-	        $employee -> email = 'kepalamuseum@sikpurba.com';
-	        $employee -> nik = '3411151145';
-	        $employee -> nama = 'agus';
-	        $employee -> role = 'kepala_museum';
-	       	$employee -> password = bcrypt('12345');
-	       	$employee -> save();
+	       	$staff = new Staff;
+	        $staff -> email = 'staffperaga2@sikpurba.com';
+	        $staff -> nik = '3411151120';
+	        $staff -> nama = 'mela';
+	        $staff -> role = 'staff_peraga';
+	       	$staff -> password = bcrypt('12345');
+	       	$staff -> save();
+
+	       	/*data staff*/
+	       	$staff = new Staff;
+	        $staff -> email = 'staffdokumen@sikpurba.com';
+	        $staff -> nik = '3411151185';
+	        $staff -> nama = 'bambang';
+	        $staff -> role = 'staff_dokumen';
+	       	$staff -> password = bcrypt('12345');
+	       	$staff -> save();
+
+	       	$staff = new Staff;
+	        $staff -> email = 'kepalamuseum@sikpurba.com';
+	        $staff -> nik = '3411151145';
+	        $staff -> nama = 'agus';
+	        $staff -> role = 'kepala_museum';
+	       	$staff -> password = bcrypt('12345');
+	       	$staff -> save();
 	       	
 
 	       	/*Data Koleksi*/
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->nomor_koleksi = 'A123';
-	       	$koleksi->nama_benda = 'Batu Kecubung';
+	       	$koleksi->nama_koleksi = 'Batu Kecubung';
 	       	$koleksi->jenis_benda = 'batuan';
 	       	$koleksi->asal_benda = 'Pangkalan Bun';
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
 	       	$koleksi->usia = 600;
 	       	$koleksi->penemu = 'Tim Geologi';
+	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->nomor_koleksi = 'B123';
-	       	$koleksi->nama_benda = 'Tulang Belikat Homosafiens';
+	       	$koleksi->nama_koleksi = 'Tulang Belikat Homosafiens';
 	       	$koleksi->jenis_benda = 'fosil';
 	       	$koleksi->asal_benda = 'Ujungpandang';
 	       	$koleksi->tgl_ditemukan = '2012-03-10';
 	       	$koleksi->usia = 1500;
 	       	$koleksi->penemu = 'Noval';
+	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->nomor_koleksi = 'C123';
-	       	$koleksi->nama_benda = 'Etanol';
+	       	$koleksi->nama_koleksi = 'Etanol';
 	       	$koleksi->jenis_benda = 'lainnya';
 	       	$koleksi->asal_benda = 'Palembang';
 	       	$koleksi->tgl_ditemukan = '2010-12-03';
 	       	$koleksi->penemu = 'Noval';
+	       	$koleksi -> save();
 
     }
 }

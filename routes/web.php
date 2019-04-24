@@ -18,16 +18,19 @@ Route::group(['middleware' => 'guest'],function(){
 
 Route::post('/login/do', 'LoginController@loginDo');
 
-Route::get('/staf_tu/dashboard', 'StafTu\DashboardController@index');
-Route::get('/staf_tu/dashboard/pegawai', 'StafTu\DashboardController@pegawai');
-Route::get('/staf_tu/dashboard/pengunjung', 'StafTu\DashboardController@pengunjung');
+Route::group(['prefix' => '/staff_tu'], function(){
+	Route::get('/dashboard', 'StaffTu\DashboardController@index');	
+	Route::resource('/staff', 'StaffTu\StaffController');
+	Route::resource('/pengunjung', 'StaffTu\PengunjungController');
+});
 
-Route::get('/staf_peraga/dashboard', 'StafPeraga\DashboardController@index');
-Route::get('/staf_peraga/dashboard/pengajuan', 'StafPeraga\DashboardController@pengajuan');
+Route::get('/staff_peraga/dashboard', 'StaffPeraga\DashboardController@index');
+Route::get('/staff_peraga/dashboard/pengajuan', 'StaffPeraga\DashboardController@pengajuan');
 
-Route::get('/staf_dokumen/dashboard', 'StafDokumen\DashboardController@index');
-Route::get('/staf_dokumen/dashboard/koleksi', 'StafDokumen\DashboardController@koleksi');
-
+Route::group(['prefix' => 'staff_dokumen'], function(){
+	Route::get('/dashboard', 'StaffDokumen\DashboardController@index');
+	Route::resource('/koleksi', 'StaffDokumen\KoleksiController');
+});
 Route::get('/kepala_museum/dashboard', 'KepalaMuseum\DashboardController@index');
 
 Route::get('/logout', 'LoginController@logout');

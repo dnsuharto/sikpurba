@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\StafPeraga;
+namespace App\Http\Controllers\StaffPeraga;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

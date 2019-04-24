@@ -15,11 +15,11 @@ class CreateScanningTable extends Migration
     {
         Schema::create('scanning', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('koneksi_id')->unsigned();
+            $table->integer('koleksi_id')->unsigned();
             $table->integer('pengunjung_id')->unsigned();
             $table->dateTime('waktu_kunjungan');
 
-            $table->foreign('koneksi_id')
+            $table->foreign('koleksi_id')
                   ->references('id')->on('koleksi')
                   ->onDelete('cascade');
 

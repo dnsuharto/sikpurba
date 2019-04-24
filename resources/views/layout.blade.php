@@ -32,44 +32,44 @@
                         </li>
                         @else
                         @php
-                            $employee = Auth::user();
+                            $staff = Auth::user();
                         @endphp
 
                      <!-- Kalo login  -->
-                        @if($employee->role == 'staf_tu')
+                        @if($staff->role == 'staff_tu')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafTu\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffTu\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafTu\DashboardController@pegawai') }}">Data Pegawai <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffTu\StaffController@index') }}">STAFF<span class="sr-only" >(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafTu\DashboardController@pengunjung') }}">Data Pengunjung <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffTu\PengunjungController@index') }}">PENGUNJUNG<span class="sr-only" >(current)</span></a>
                         </li>
                         @endif
 
                       <!-- Tombol Dashboard -->
-                        @if($employee->role == 'staf_peraga')
+                        @if($staff->role == 'staff_peraga')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafPeraga\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffPeraga\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafPeraga\DashboardController@pengajuan') }}">Tambah Pengajuan <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffPeraga\DashboardController@pengajuan') }}">Tambah Pengajuan <span class="sr-only" >(current)</span></a>
                         </li>
                         @endif
 
-                        @if($employee->role == 'staf_dokumen')
+                        @if($staff->role == 'staff_dokumen')
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafDokumen\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffDokumen\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('StafDokumen\DashboardController@koleksi') }}">Data Koleksi <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('StaffDokumen\KoleksiController@index') }}">Data Koleksi <span class="sr-only" >(current)</span></a>
                         </li>
                         
                         @endif
 
 
-                        @if($employee->role == 'kepala_museum')
+                        @if($staff->role == 'kepala_museum')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ action('KepalaMuseum\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
                         </li>
