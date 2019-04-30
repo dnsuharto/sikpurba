@@ -1,17 +1,29 @@
 @extends('layout')
 
 @section('body')
+<?php
 
+$nama = $staff->nama;
+if(old('nama')!=null){
+	$nama = old('nama');
+}
+
+$nama = $staff->nama;
+if(old('nama')!=null){
+	$nama = old('nama');
+}
+
+?>
 <div class="container" style="margin-top: 20px; text-align: center;">
 	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
 	  <div class="card-body">
-	    <h5 class="card-title" style="text-align: center;">Tambah Staff</h5>
-	   		<form style="text-align: left;" action="{{ action('StaffTu\StaffController@store') }}" method="post">
+	    <h5 class="card-title" style="text-align: center;">Edit Staff</h5>
+	   		<form style="text-align: left;" action="{{ action('StaffTu\StaffController@update') }}" method="post">
 		    	@csrf
-			  
+			  <input type="hidden" name="_method" value="PUT">
 			  <div class="form-group">
 			    <label>Nama Staff</label>
-			    <input name="nama" value="{{ old('nama') }}" class="form-control" placeholder="Masukkan Nama Staff">
+			    <input name="nama" value="{{ $nama }}" class="form-control" placeholder="Masukkan Nama Staff">
 			    	@if ($errors->has('nama')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('nama') }}</div>
 				    @endif
