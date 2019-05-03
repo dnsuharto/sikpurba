@@ -10,9 +10,5 @@ class DashboardController extends Controller{
     {
         return view('staf_dokumen.index');
     }
-    public function koleksi()
-    {
-        return view('staf_dokumen.koleksi');
-    }
 }
 

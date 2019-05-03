@@ -97,9 +97,31 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $validatedData = $request->validate([
+        'email' => 'required|email|unique:staffs,email,'.$id.'|max:255',
+        'nik' => 'required|numeric',
+        'nama' => 'required'
+        ],
+        [
+        'email.required' => 'Email tidak boleh kosong',
+        'email.email' => 'Email harus sesuai dengan format',
+        'email.unique' => 'Email sudah terdaftar',
+        'email.max' => 'Email terlalu panjang',
+        'nik.required' => 'NIK tidak boleh kosong',
+        'nik.numeric' => 'NIK harus angka',
+        'nama.required' => 'Nama tidak boleh kosong'
+        ]);
 
+        $staff = Staff::find($id);
+        $staff -> email = $request->input('email');
+        $staff -> nik = $request->input('nik');
+        $staff -> nama = $request->input('nama');
+        $staff -> role = $request->input('role');
+        $staff -> password = bcrypt('12345');
+        $staff -> save();
+
+         return redirect()->action('StaffTu\StaffController@index')->with('msg', 'Data berhasil diedit');
+    }
     /**
      * Remove the specified resource from storage.
      *

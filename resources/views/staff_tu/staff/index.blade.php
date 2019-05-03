@@ -4,7 +4,7 @@
 <!--
 <style> table{border: 3px} </style>
 -->
-<div class="container">
+<div class="container-fluid">
   @if(Session::has('msg'))
         <div class="alert alert-success mt-3">
           {{ session('msg') }}
@@ -36,7 +36,6 @@
       <td>{{ $staff->email }}</td>
       <td>{{ $staff->role }}</td>
       <td>
-      	
       	<a href="{{ action('StaffTu\StaffController@edit', $staff->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
 		    <button onclick="hapus({{ $staff->id }})" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</button>
 	    </td>
