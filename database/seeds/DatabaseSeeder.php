@@ -65,10 +65,10 @@ class DatabaseSeeder extends Seeder
 	       	/*Data Koleksi*/
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->nomor_koleksi = 'A123';
+	       	$koleksi->no_koleksi = 'A123';
 	       	$koleksi->nama_koleksi = 'Batu Kecubung';
-	       	$koleksi->jenis_benda = 'batuan';
-	       	$koleksi->asal_benda = 'Pangkalan Bun';
+	       	$koleksi->jenis_koleksi = 'batuan';
+	       	$koleksi->asal_koleksi = 'Pangkalan Bun';
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
 	       	$koleksi->usia = 600;
 	       	$koleksi->penemu = 'Tim Geologi';
@@ -76,10 +76,10 @@ class DatabaseSeeder extends Seeder
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->nomor_koleksi = 'B123';
+	       	$koleksi->no_koleksi = 'B123';
 	       	$koleksi->nama_koleksi = 'Tulang Belikat Homosafiens';
-	       	$koleksi->jenis_benda = 'fosil';
-	       	$koleksi->asal_benda = 'Ujungpandang';
+	       	$koleksi->jenis_koleksi = 'fosil';
+	       	$koleksi->asal_koleksi = 'Ujungpandang';
 	       	$koleksi->tgl_ditemukan = '2012-03-10';
 	       	$koleksi->usia = 1500;
 	       	$koleksi->penemu = 'Noval';
@@ -87,10 +87,10 @@ class DatabaseSeeder extends Seeder
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->nomor_koleksi = 'C123';
+	       	$koleksi->no_koleksi = 'C123';
 	       	$koleksi->nama_koleksi = 'Etanol';
-	       	$koleksi->jenis_benda = 'lainnya';
-	       	$koleksi->asal_benda = 'Palembang';
+	       	$koleksi->jenis_koleksi = 'lainnya';
+	       	$koleksi->asal_koleksi = 'Palembang';
 	       	$koleksi->tgl_ditemukan = '2010-12-03';
 	       	$koleksi->penemu = 'Noval';
 	       	$koleksi -> save();

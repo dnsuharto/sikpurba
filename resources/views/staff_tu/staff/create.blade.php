@@ -39,13 +39,6 @@
 				    <option value="staff_tu" @if(old('role') == 'staff_tu') selected=true @endif>Staff TU</option>
 				  </select>
 			  </div>
-<!--
-			  @if(Session::has('msg'))
-			  <div style="color: red; font-size: 0.9em; margin-bottom: 20px; margin-top: -20px;">
-			  	{{ session('msg') }}
-			  </div>
-			  @endif
--->
 			  <div style="text-align: center;">
 				  <button type="submit" class="btn btn-primary">Tambah Staff</button>
 			  </div>

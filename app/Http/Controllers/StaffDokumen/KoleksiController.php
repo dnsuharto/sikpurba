@@ -15,9 +15,9 @@ class KoleksiController extends Controller
      */
     public function index()
     {
-        $koleksis = Koleksi::get();
+        $koleksis = Koleksi::paginate(10);
         
-        return view('staff_dokumen.koleksi')->with('koleksis', $koleksis);
+        return view('staff_dokumen.koleksi.index')->with('koleksis', $koleksis);
     }
 
     /**
@@ -27,7 +27,7 @@ class KoleksiController extends Controller
      */
     public function create()
     {
-        //
+        return view('staff_dokumen.koleksi.create');
     }
 
     /**
@@ -38,7 +38,34 @@ class KoleksiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        $validatedData = $request->validate([
+        'email' => 'required|email|unique:staffs|max:255',
+        'nik' => 'required|numeric',
+        'nama' => 'required'
+        ],
+        [
+        'email.required' => 'Email tidak boleh kosong',
+        'email.email' => 'Email harus sesuai dengan format',
+        'email.unique' => 'Email sudah terdaftar',
+        'email.max' => 'Email terlalu panjang',
+        'nik.required' => 'NIK tidak boleh kosong',
+        'nik.numeric' => 'NIK harus angka',
+        'nama.required' => 'Nama tidak boleh kosong'
+        ]);*/
+
+        $koleksi = new koleksi;
+        $koleksi -> no_koleksi = $request->input('no_koleksi');
+        $koleksi -> nama_koleksi = $request->input('nama_koleksi');
+        $koleksi -> jenis_koleksi = $request->input('jenis_koleksi');
+        $koleksi -> asal_koleksi = $request->input('asal_koleksi');
+        $koleksi -> tgl_ditemukan = $request->input('tgl_koleksi');
+        $koleksi -> usia = $request->input('usia');
+        $koleksi -> penemu = $request->input('penemu');
+        $koleksi -> gambar_koleksi = $request->input('gambar_koleksi');
+        $koleksi -> save();
+
+         return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -60,7 +87,9 @@ class KoleksiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+
+        return view('staff_dokumen.koleksi.edit')->with('koleksi', $koleksi);
     }
 
     /**
@@ -72,7 +101,34 @@ class KoleksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /*
+        $validatedData = $request->validate([
+        'email' => 'required|email|unique:staffs|max:255',
+        'nik' => 'required|numeric',
+        'nama' => 'required'
+        ],
+        [
+        'email.required' => 'Email tidak boleh kosong',
+        'email.email' => 'Email harus sesuai dengan format',
+        'email.unique' => 'Email sudah terdaftar',
+        'email.max' => 'Email terlalu panjang',
+        'nik.required' => 'NIK tidak boleh kosong',
+        'nik.numeric' => 'NIK harus angka',
+        'nama.required' => 'Nama tidak boleh kosong'
+        ]);*/
+
+        $koleksi = Koleksi::find($id);
+        $koleksi -> no_koleksi = $request->input('no_koleksi');
+        $koleksi -> nama_koleksi = $request->input('nama_koleksi');
+        $koleksi -> jenis_koleksi = $request->input('jenis_koleksi');
+        $koleksi -> asal_koleksi = $request->input('asal_koleksi');
+        $koleksi -> tgl_ditemukan = $request->input('tgl_koleksi');
+        $koleksi -> usia = $request->input('usia');
+        $koleksi -> penemu = $request->input('penemu');
+        $koleksi -> gambar_koleksi = $request->input('gambar_koleksi');
+        $koleksi -> save();
+
+         return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil diedit');
     }
 
     /**
@@ -83,6 +139,10 @@ class KoleksiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+        $koleksi->delete(); 
+
+        return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil dihapus');
+
     }
 }
