@@ -4,6 +4,7 @@ namespace App\Http\Controllers\StaffTu;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Pengunjung;
 
 class PengunjungController extends Controller
 {
@@ -14,7 +15,8 @@ class PengunjungController extends Controller
      */
     public function index()
     {
-        return view('staff_tu.pengunjung.index');
+        $pengunjungs = Pengunjung::paginate(10);
+        return view('staff_tu.pengunjung.index')->with('pengunjungs', $pengunjungs);
     }
 
     /**

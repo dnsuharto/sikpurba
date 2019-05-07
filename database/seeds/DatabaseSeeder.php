@@ -72,6 +72,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
 	       	$koleksi->usia = 600;
 	       	$koleksi->penemu = 'Tim Geologi';
+	       	$koleksi->status = 'peraga';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
@@ -83,17 +84,26 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->tgl_ditemukan = '2012-03-10';
 	       	$koleksi->usia = 1500;
 	       	$koleksi->penemu = 'Noval';
+	       	$koleksi->status = 'peraga';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
-	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->no_koleksi = 'C123';
-	       	$koleksi->nama_koleksi = 'Etanol';
-	       	$koleksi->jenis_koleksi = 'lainnya';
-	       	$koleksi->asal_koleksi = 'Palembang';
-	       	$koleksi->tgl_ditemukan = '2010-12-03';
-	       	$koleksi->penemu = 'Noval';
+	       	$koleksi-> gambar_koleksi = '';
+	       	$koleksi-> no_koleksi = 'C123';
+	       	$koleksi-> nama_koleksi = 'Etanol';
+	       	$koleksi-> jenis_koleksi = 'lainnya';
+	       	$koleksi-> asal_koleksi = 'Palembang';
+	       	$koleksi-> tgl_ditemukan = '2010-12-03';
+	       	$koleksi-> penemu = 'Noval';
+	       	$koleksi->status = 'nonperaga';
 	       	$koleksi -> save();
 
+
+	       	$pengunjung = new Pengunjung;
+	       	$pengunjung-> id_pengunjung = '12345';
+	       	$pengunjung-> nama = 'Hendra';
+	       	$pengunjung-> email = 'hendra@gmail.com';
+	       	$pengunjung-> password = bcrypt('12345');
+	       	$pengunjung-> save();
     }
 }

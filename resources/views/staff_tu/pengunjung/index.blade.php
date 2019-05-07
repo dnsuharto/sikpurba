@@ -1,7 +1,10 @@
 @extends('layout')
 
 @section('body')
-
+<div class="container-fluid">
+<div class="card">
+<div class="card-body">
+</div>
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -25,5 +28,9 @@
    @endforeach
   </tbody>
 </table>
+</div>
+{!! $pengunjungs->links() !!}
+</div>
+
 
 @endsection

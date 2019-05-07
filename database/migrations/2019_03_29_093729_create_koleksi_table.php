@@ -23,6 +23,7 @@ class CreateKoleksiTable extends Migration
             $table->date('tgl_ditemukan');
             $table->integer('usia')->nullable();
             $table->string('penemu');
+            $table->enum('status',['nonperaga','peraga']);
             $table->timestamps();
         });
     }

@@ -69,24 +69,35 @@ if(old('penemu')!=null){
 			    	@if ($errors->has('asal_koleksi')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('asal_koleksi') }}</div>
 				    @endif
+			  </div>
 			  <div class="form-group">
 			    <label>Tanggal ditemukan Koleksi</label>
 			    <input type="date" name="tgl_ditemukan" value="{{ old('tgl_ditemukan') }}" class="form-control" placeholder="Masukkan Tanggal ditemukan Koleksi">
 			    	@if ($errors->has('tgl_ditemukan')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('tgl_ditemukan') }}</div>
 				    @endif
+			  </div>
 			  <div class="form-group">
 			    <label>Usia</label>
 			    <input name="usia" value="{{ old('usia') }}" class="form-control" placeholder="Masukkan Usia Koleksi">
 			    	@if ($errors->has('usia')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('usia') }}</div>
 				    @endif
+			  </div>
+			  <div class="form-group">
 			  <label>Penemu</label>
 			    <input name="penemu" value="{{ old('penemu') }}" class="form-control" placeholder="Masukkan Nama Penemu Koleksi">
 			    	@if ($errors->has('penemu')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('penemu') }}</div>
 				    @endif
-			 
+			  </div>
+			 <div class="form-group">
+				  <label>Status Koleksi:</label>
+				  <select class="form-control" name="status">
+				    <option value="nonperaga" @if(old('status') == 'nonperaga') selected=true @endif>Nonperaga</option>
+				    <option value="peraga" @if(old('status') == 'peraga') selected=true @endif>Peraga</option>
+				  </select>
+			  </div>
 			  <div style="text-align: center;">
 				  <button type="submit" class="btn btn-primary">Simpan</button>
 			  </div>

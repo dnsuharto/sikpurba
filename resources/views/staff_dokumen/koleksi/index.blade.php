@@ -25,6 +25,7 @@
     	  <th scope="col">Usia </th>
     	  <th scope="col">Penemu </th>
     	  <th scope="col">Gambar </th>
+        <th scope="col">Status </th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
@@ -39,6 +40,7 @@
         <td>{{ $koleksi->usia }}</td>
         <td>{{ $koleksi->penemu }}</td>
         <td>{{ $koleksi->gambar_koleksi }}</td>
+        <td>{{ $koleksi->status }}</td>
         <td>
         	<a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
           <a href="{{ action('StaffDokumen\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Edit</a>

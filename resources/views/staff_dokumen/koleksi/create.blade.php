@@ -57,6 +57,13 @@
 				    	<div style="color: #ff0000 ">{{ $errors->first('penemu') }}</div>
 				    @endif
 			 </div>
+			 <div class="form-group">
+				  <label>Status Koleksi:</label>
+				  <select class="form-control" name="status">
+				    <option value="nonperaga" @if(old('status') == 'nonperaga') selected=true @endif>Nonperaga</option>
+				    <option value="peraga" @if(old('status') == 'peraga') selected=true @endif>Peraga</option>
+				  </select>
+			  </div>
 			  <div style="text-align: center;">
 				  <button type="submit" class="btn btn-primary">Tambah Koleksi</button>
 			  </div>
