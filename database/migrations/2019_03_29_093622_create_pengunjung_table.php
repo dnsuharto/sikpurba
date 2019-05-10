@@ -18,6 +18,7 @@ class CreatePengunjungTable extends Migration
             $table->integer('id_pengunjung')->unsigned();
             $table->string('nama');
             $table->string('email',100)->unique();
+            $table->date('tgl_kunjungan');
             $table->string('password');
             $table->timestamps();
         });

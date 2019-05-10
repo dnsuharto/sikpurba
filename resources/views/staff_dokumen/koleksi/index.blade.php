@@ -19,13 +19,13 @@
       <tr>
         <th scope="col">No Koleksi</th>
         <th scope="col">Nama Koleksi</th>
-        <th scope="col">Jenis Koleksi </th>
-        <th scope="col">Asal Koleksi </th>
-        <th scope="col">Tanggal Ditemukan </th>
-    	  <th scope="col">Usia </th>
-    	  <th scope="col">Penemu </th>
-    	  <th scope="col">Gambar </th>
-        <th scope="col">Status </th>
+        <th scope="col">Jenis Koleksi</th>
+        <th scope="col">Asal Koleksi</th>
+        <th scope="col">Tanggal Ditemukan</th>
+    	  <th scope="col">Usia</th>
+    	  <th scope="col">Penemu</th>
+        <th scope="col">Status</th>
+        <th scope="col">Status Pengajuan</th>
         <th scope="col">Aksi</th>
       </tr>
     </thead>
@@ -39,10 +39,27 @@
         <td>{{ $koleksi->tgl_ditemukan }}</td>
         <td>{{ $koleksi->usia }}</td>
         <td>{{ $koleksi->penemu }}</td>
-        <td>{{ $koleksi->gambar_koleksi }}</td>
-        <td>{{ $koleksi->status }}</td>
         <td>
-        	<a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
+          @if($koleksi->status=='nonperaga')
+            <div class="badge btn-secondary">PENYIMPANAN</div>
+            @endif
+            @if($koleksi->status=='peraga')
+            <div class="badge btn-primary">PERAGAAN</div>
+            @endif
+        </td>
+        <td>
+            @if($koleksi->status_pengajuan=='belum')
+            <div class="badge btn-danger">BELUM DIAJUKAN</div>
+            @endif
+            @if($koleksi->status_pengajuan=='sedang')
+            <div class="badge btn-secondary">SEDANG DIAJUKAN</div>
+            @endif
+            @if($koleksi->status_pengajuan=='telah')
+            <div class="badge btn-primary">TELAH DISETUJUI</div>
+            @endif
+        </td>
+        <td>
+        	<a href="{{ action('StaffDokumen\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
           <a href="{{ action('StaffDokumen\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Edit</a>
   		<button onclick="hapus({{ $koleksi->id }})" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</button>
   	  </td>

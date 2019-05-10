@@ -58,10 +58,22 @@
 				    @endif
 			 </div>
 			 <div class="form-group">
+			 	<label>Gambar Koleksi</label>
+			 	<input name="gambar_koleksi" type="file" id="gambar_koleksi"  />
+			 </div>
+			 <div class="form-group">
 				  <label>Status Koleksi:</label>
 				  <select class="form-control" name="status">
 				    <option value="nonperaga" @if(old('status') == 'nonperaga') selected=true @endif>Nonperaga</option>
 				    <option value="peraga" @if(old('status') == 'peraga') selected=true @endif>Peraga</option>
+				  </select>
+			  </div>
+			  <div class="form-group">
+				  <label>Status Pengajuan:</label>
+				  <select class="form-control" name="status_pengajuan">
+				    <option value="belum" @if(old('status_pengajuan') == 'belum') selected=true @endif>BELUM DIAJUKAN</option>
+				    <option value="sedang" @if(old('status_pengajuan') == 'sedang') selected=true @endif>SEDANG DIAJUKAN</option>
+				    <option value="telah" @if(old('status_pengajuan') == 'telah') selected=true @endif>TELAH DISETUJUI</option>
 				  </select>
 			  </div>
 			  <div style="text-align: center;">
@@ -71,6 +83,10 @@
 	  </div>
 	</div>
 </div>
+@endsection
 
-
+@section('script')
+<script type="text/javascript">
+	$('#gambar_koleksi').dropify();
+</script>
 @endsection

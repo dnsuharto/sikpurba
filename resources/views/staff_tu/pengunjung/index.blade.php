@@ -11,6 +11,7 @@
       <th scope="col">ID Pengunjung</th>
       <th scope="col">Nama</th>
       <th scope="col">Email</th>
+      <th scope="col">Tanggal Kunjungan</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
@@ -20,9 +21,9 @@
       <td>{{ $pengunjung->id_pengunjung }}</td>
       <td>{{ $pengunjung->nama }}</td>
       <td>{{ $pengunjung->email }}</td>
+      <td>{{ $pengunjung->tgl_kunjungan }}</td>
       <td>
       	<a href="#" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
-		    <a href="#" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Hapus</a>
 	    </td>
     </tr>
    @endforeach

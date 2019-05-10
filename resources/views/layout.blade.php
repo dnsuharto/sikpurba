@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dropify.min.css') }}">
         <!-- Styles -->
        
     </head>
@@ -87,9 +87,14 @@
             </div>
         </nav>
         @yield('body')
+        <script type="text/javascript" src="{{ asset('js/jquery.js') }}?v=baru"></script>
 
-        <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/popper.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/dropify.js') }}"></script>
+
+        @section('script')
+
+        @show
     </body>
 </html>

@@ -38,31 +38,37 @@ class KoleksiController extends Controller
      */
     public function store(Request $request)
     {
-        /*
+        
         $validatedData = $request->validate([
-        'email' => 'required|email|unique:staffs|max:255',
-        'nik' => 'required|numeric',
-        'nama' => 'required'
+        'no_koleksi' => 'required',
+        'nama_koleksi' => 'required',
+        'asal_koleksi' => 'required',
+        'tgl_ditemukan' => 'required',
+        'usia' => 'required',
+        'gambar_koleksi' =>'required',
+        'penemu' =>'required'
         ],
         [
-        'email.required' => 'Email tidak boleh kosong',
-        'email.email' => 'Email harus sesuai dengan format',
-        'email.unique' => 'Email sudah terdaftar',
-        'email.max' => 'Email terlalu panjang',
-        'nik.required' => 'NIK tidak boleh kosong',
-        'nik.numeric' => 'NIK harus angka',
-        'nama.required' => 'Nama tidak boleh kosong'
-        ]);*/
+        'no_koleksi.required' => 'no koleksi tidak boleh kosong',
+        'nama_koleksi.required' => 'Nama tidak boleh kosong',
+        'asal_koleksi.required' => 'Asal tidak boleh kosong',
+        'tgl_ditemukan.required' => 'Tanggal tidak boleh kosong',
+        'usia.required' => 'usia tidak boleh kosong',
+        'penemu.required' => 'penemu tidak boleh kosong',
+        'gambar_koleksi.required' => 'Gambar tidak boleh kosong',
+        ]);
 
         $koleksi = new koleksi;
         $koleksi -> no_koleksi = $request->input('no_koleksi');
         $koleksi -> nama_koleksi = $request->input('nama_koleksi');
         $koleksi -> jenis_koleksi = $request->input('jenis_koleksi');
         $koleksi -> asal_koleksi = $request->input('asal_koleksi');
-        $koleksi -> tgl_ditemukan = $request->input('tgl_koleksi');
+        $koleksi -> tgl_ditemukan = $request->input('tgl_ditemukan');
         $koleksi -> usia = $request->input('usia');
         $koleksi -> penemu = $request->input('penemu');
         $koleksi -> gambar_koleksi = $request->input('gambar_koleksi');
+        $koleksi -> status = $request->input('status');
+        $koleksi -> status_pengajuan = $request->input('status_pengajuan');
         $koleksi -> save();
 
          return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil ditambahkan');
@@ -76,7 +82,9 @@ class KoleksiController extends Controller
      */
     public function show($id)
     {
-        //
+        $koleksi = Koleksi::find($id);
+        
+        return view('staff_dokumen.koleksi.show')->with('koleksi', $koleksi);
     }
 
     /**

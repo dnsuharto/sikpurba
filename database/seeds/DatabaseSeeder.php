@@ -72,19 +72,21 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
 	       	$koleksi->usia = 600;
 	       	$koleksi->penemu = 'Tim Geologi';
-	       	$koleksi->status = 'peraga';
+	       	$koleksi->status = 'nonperaga';
+	       	$koleksi-> status_pengajuan = 'sedang';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
-	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->no_koleksi = 'B123';
-	       	$koleksi->nama_koleksi = 'Tulang Belikat Homosafiens';
-	       	$koleksi->jenis_koleksi = 'fosil';
-	       	$koleksi->asal_koleksi = 'Ujungpandang';
-	       	$koleksi->tgl_ditemukan = '2012-03-10';
-	       	$koleksi->usia = 1500;
-	       	$koleksi->penemu = 'Noval';
-	       	$koleksi->status = 'peraga';
+	       	$koleksi-> gambar_koleksi = '';
+	       	$koleksi-> no_koleksi = 'B123';
+	       	$koleksi-> nama_koleksi = 'Tulang Belikat Homosafiens';
+	       	$koleksi-> jenis_koleksi = 'fosil';
+	       	$koleksi-> asal_koleksi = 'Ujungpandang';
+	       	$koleksi-> tgl_ditemukan = '2012-03-10';
+	       	$koleksi-> usia = 1500;
+	       	$koleksi-> penemu = 'Noval';
+	       	$koleksi-> status = 'peraga';
+	       	$koleksi-> status_pengajuan = 'telah';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
@@ -95,7 +97,8 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi-> asal_koleksi = 'Palembang';
 	       	$koleksi-> tgl_ditemukan = '2010-12-03';
 	       	$koleksi-> penemu = 'Noval';
-	       	$koleksi->status = 'nonperaga';
+	       	$koleksi-> status = 'nonperaga';
+            $koleksi-> status_pengajuan = 'belum';
 	       	$koleksi -> save();
 
 
@@ -104,6 +107,7 @@ class DatabaseSeeder extends Seeder
 	       	$pengunjung-> nama = 'Hendra';
 	       	$pengunjung-> email = 'hendra@gmail.com';
 	       	$pengunjung-> password = bcrypt('12345');
+	       	$pengunjung-> tgl_kunjungan = '2019-03-01';
 	       	$pengunjung-> save();
     }
 }

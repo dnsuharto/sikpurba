@@ -24,6 +24,7 @@ class CreateKoleksiTable extends Migration
             $table->integer('usia')->nullable();
             $table->string('penemu');
             $table->enum('status',['nonperaga','peraga']);
+            $table->enum('status_pengajuan',['belum','sedang','telah']);
             $table->timestamps();
         });
     }
