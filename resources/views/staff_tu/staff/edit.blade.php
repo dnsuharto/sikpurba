@@ -19,7 +19,6 @@ $role = $staff->role;
 if(old('role')!=null){
 	$role = old('role');
 }
-
 ?>
 <div class="container" style="margin-top: 20px; text-align: center;">
 	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">

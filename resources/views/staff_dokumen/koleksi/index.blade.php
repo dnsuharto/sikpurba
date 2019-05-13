@@ -18,6 +18,7 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">No Koleksi</th>
+        <th width="80"></th>
         <th scope="col">Nama Koleksi</th>
         <th scope="col">Jenis Koleksi</th>
         <th scope="col">Asal Koleksi</th>
@@ -33,6 +34,7 @@
       @foreach($koleksis as $koleksi)
       <tr>
         <td>{{ $koleksi->no_koleksi }}</td>
+        <td><img class="img-fluid" src="{{ asset('storage/koleksi/thumb/'.$koleksi->gambar_koleksi) }}"></td>
         <td>{{ $koleksi->nama_koleksi }}</td>
         <td>{{ $koleksi->jenis_koleksi }}</td>
         <td>{{ $koleksi->asal_koleksi }}</td>

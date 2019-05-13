@@ -5,6 +5,8 @@ namespace App\Http\Controllers\StaffDokumen;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Koleksi;
+use Image;
+use Storage;
 
 class KoleksiController extends Controller
 {
@@ -45,7 +47,7 @@ class KoleksiController extends Controller
         'asal_koleksi' => 'required',
         'tgl_ditemukan' => 'required|before:tomorrow',
         'usia' => 'required',
-        'gambar_koleksi' =>'required|image',
+        'gambar_koleksi' =>'required' ,
         'penemu' =>'required|alpha'
         ],
         [
@@ -58,7 +60,7 @@ class KoleksiController extends Controller
         'usia.required' => 'usia tidak boleh kosong',
         'penemu.required' => 'penemu tidak boleh kosong',
         'penemu.alpha' => 'Nama penemu harus alphabet',
-        'gambar_koleksi.image' => 'Gambar tidak boleh kosong',
+        'gambar_koleksi.required' => 'Gambar tidak boleh kosong',
         ]);
 
         $koleksi = new koleksi;
@@ -69,7 +71,15 @@ class KoleksiController extends Controller
         $koleksi -> tgl_ditemukan = $request->input('tgl_ditemukan');
         $koleksi -> usia = $request->input('usia');
         $koleksi -> penemu = $request->input('penemu');
-        $koleksi -> gambar_koleksi = $request->input('gambar_koleksi');
+
+        $filename ='koleksi_'.time().rand(1000,9999).'.jpg';
+
+        Image::make($request->file('gambar_koleksi'))->save( storage_path('app/public/koleksi/'.$filename), 100);
+
+        Image::make($request->file('gambar_koleksi'))->fit(100, 100)->save( storage_path('app/public/koleksi/thumb/'.$filename), 100);
+
+        $koleksi-> gambar_koleksi = $filename;
+
         $koleksi -> status = $request->input('status');
         $koleksi -> status_pengajuan = $request->input('status_pengajuan');
         $koleksi -> save();
@@ -112,31 +122,46 @@ class KoleksiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        /*
         $validatedData = $request->validate([
-        'email' => 'required|email|unique:staffs|max:255',
-        'nik' => 'required|numeric',
-        'nama' => 'required'
+        'no_koleksi' => 'required|',
+        'nama_koleksi' => 'required',
+        'asal_koleksi' => 'required',
+        'tgl_ditemukan' => 'required|before:tomorrow',
+        'usia' => 'required',
+        'gambar_koleksi' =>'required' ,
+        'penemu' =>'required'
         ],
         [
-        'email.required' => 'Email tidak boleh kosong',
-        'email.email' => 'Email harus sesuai dengan format',
-        'email.unique' => 'Email sudah terdaftar',
-        'email.max' => 'Email terlalu panjang',
-        'nik.required' => 'NIK tidak boleh kosong',
-        'nik.numeric' => 'NIK harus angka',
-        'nama.required' => 'Nama tidak boleh kosong'
-        ]);*/
+        'no_koleksi.required' => 'no koleksi tidak boleh kosong',
+        'nama_koleksi.required' => 'Nama tidak boleh kosong',
+        'asal_koleksi.required' => 'Asal tidak boleh kosong',
+        'tgl_ditemukan.required' => 'Tanggal tidak boleh kosong',
+        'tgl_ditemukan.before' => 'Tanggal tidak boleh lebih dari hari ini',
+        'usia.required' => 'usia tidak boleh kosong',
+        'penemu.required' => 'penemu tidak boleh kosong',
+        'gambar_koleksi.required' => 'Gambar tidak boleh kosong',
+        ]);
+
 
         $koleksi = Koleksi::find($id);
         $koleksi -> no_koleksi = $request->input('no_koleksi');
         $koleksi -> nama_koleksi = $request->input('nama_koleksi');
         $koleksi -> jenis_koleksi = $request->input('jenis_koleksi');
         $koleksi -> asal_koleksi = $request->input('asal_koleksi');
-        $koleksi -> tgl_ditemukan = $request->input('tgl_koleksi');
+        $koleksi -> tgl_ditemukan = $request->input('tgl_ditemukan');
         $koleksi -> usia = $request->input('usia');
         $koleksi -> penemu = $request->input('penemu');
-        $koleksi -> gambar_koleksi = $request->input('gambar_koleksi');
+        
+        Storage::delete(['public/koleksi/'.$koleksi->gambar_koleksi, 'public/koleksi/thumb/'.$koleksi->gambar_koleksi]);
+        $filename ='koleksi_'.time().rand(1000,9999).'.jpg';
+        Image::make($request->file('gambar_koleksi'))->save( storage_path('app/public/koleksi/'.$filename), 100);
+
+        Image::make($request->file('gambar_koleksi'))->fit(100, 100)->save( storage_path('app/public/koleksi/thumb/'.$filename), 100);
+
+        $koleksi-> gambar_koleksi = $filename;
+
+        $koleksi -> status = $request->input('status');
+        $koleksi -> status_pengajuan = $request->input('status_pengajuan');
         $koleksi -> save();
 
          return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil diedit');
@@ -152,7 +177,7 @@ class KoleksiController extends Controller
     {
         $koleksi = Koleksi::find($id);
         $koleksi->delete(); 
-
+        Storage::delete(['public/koleksi/'.$koleksi->gambar_koleksi, 'public/koleksi/thumb/'.$koleksi->gambar_koleksi]);
         return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil dihapus');
 
     }

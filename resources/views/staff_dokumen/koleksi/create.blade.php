@@ -6,7 +6,7 @@
 	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
 	  <div class="card-body">
 	    <h5 class="card-title" style="text-align: center;">Tambah Koleksi</h5>
-	   		<form style="text-align: left;" action="{{ action('StaffDokumen\KoleksiController@store') }}" method="post">
+	   		<form enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumen\KoleksiController@store') }}" method="post">
 		    	@csrf
 			  
 			  <div class="form-group">
@@ -60,6 +60,9 @@
 			 <div class="form-group">
 			 	<label>Gambar Koleksi</label>
 			 	<input name="gambar_koleksi" type="file" id="gambar_koleksi" data-show-remove="false"  />
+			 	@if ($errors->has('gambar_koleksi')) 
+				    	<div style="color: #ff0000 ">{{ $errors->first('gambar_koleksi') }}</div>
+				    @endif
 			 </div>
 			 <div class="form-group">
 				  <label>Status Koleksi:</label>
