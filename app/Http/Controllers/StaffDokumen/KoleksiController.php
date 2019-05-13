@@ -40,22 +40,25 @@ class KoleksiController extends Controller
     {
         
         $validatedData = $request->validate([
-        'no_koleksi' => 'required',
+        'no_koleksi' => 'required|unique:koleksi',
         'nama_koleksi' => 'required',
         'asal_koleksi' => 'required',
-        'tgl_ditemukan' => 'required',
+        'tgl_ditemukan' => 'required|before:tomorrow',
         'usia' => 'required',
-        'gambar_koleksi' =>'required',
-        'penemu' =>'required'
+        'gambar_koleksi' =>'required|image',
+        'penemu' =>'required|alpha'
         ],
         [
         'no_koleksi.required' => 'no koleksi tidak boleh kosong',
+        'no_koleksi.unique' => 'no koleksi telah terdaftar',
         'nama_koleksi.required' => 'Nama tidak boleh kosong',
         'asal_koleksi.required' => 'Asal tidak boleh kosong',
         'tgl_ditemukan.required' => 'Tanggal tidak boleh kosong',
+        'tgl_ditemukan.before' => 'Tanggal tidak boleh lebih dari hari ini',
         'usia.required' => 'usia tidak boleh kosong',
         'penemu.required' => 'penemu tidak boleh kosong',
-        'gambar_koleksi.required' => 'Gambar tidak boleh kosong',
+        'penemu.alpha' => 'Nama penemu harus alphabet',
+        'gambar_koleksi.image' => 'Gambar tidak boleh kosong',
         ]);
 
         $koleksi = new koleksi;

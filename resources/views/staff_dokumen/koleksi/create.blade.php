@@ -59,7 +59,7 @@
 			 </div>
 			 <div class="form-group">
 			 	<label>Gambar Koleksi</label>
-			 	<input name="gambar_koleksi" type="file" id="gambar_koleksi"  />
+			 	<input name="gambar_koleksi" type="file" id="gambar_koleksi" data-show-remove="false"  />
 			 </div>
 			 <div class="form-group">
 				  <label>Status Koleksi:</label>
@@ -87,6 +87,10 @@
 
 @section('script')
 <script type="text/javascript">
-	$('#gambar_koleksi').dropify();
+	$('#gambar_koleksi').dropify({
+    messages: {
+        'remove':  'Remove',
+    }
+});
 </script>
 @endsection

@@ -52,7 +52,7 @@
             <div class="badge btn-danger">BELUM DIAJUKAN</div>
             @endif
             @if($koleksi->status_pengajuan=='sedang')
-            <div class="badge btn-secondary">SEDANG DIAJUKAN</div>
+            <div class="badge btn-warning">SEDANG DIAJUKAN</div>
             @endif
             @if($koleksi->status_pengajuan=='telah')
             <div class="badge btn-primary">TELAH DISETUJUI</div>
