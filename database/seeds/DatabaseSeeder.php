@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
      		/*data  staff peraga*/
        		$staff = new Staff;
-	        $staff -> email = 'staffperaga1@sikpurba.com';
+	        $staff -> email = 'staffperaga@sikpurba.com';
 	        $staff -> nik = '3411151125';
 	        $staff -> nama = 'nisa';
 	        $staff -> role = 'staff_peraga';
@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 	       	$staff -> save();
 
 	       	$staff = new Staff;
-	        $staff -> email = 'staffperaga2@sikpurba.com';
+	        $staff -> email = 'staffperaga1@sikpurba.com';
 	        $staff -> nik = '3411151120';
 	        $staff -> nama = 'mela';
 	        $staff -> role = 'staff_peraga';

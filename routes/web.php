@@ -31,7 +31,12 @@ Route::group(['prefix' => 'staff_dokumen'], function(){
 	Route::get('/dashboard', 'StaffDokumen\DashboardController@index');
 	Route::resource('/koleksi', 'StaffDokumen\KoleksiController');
 });
-Route::get('/kepala_museum/dashboard', 'KepalaMuseum\DashboardController@index');
+
+Route::group(['prefix' => 'kepala_museum'], function(){
+	Route::get('/dashboard', 'KepalaMuseum\DashboardController@index');
+	Route::resource('/koleksi', 'KepalaMuseum\KoleksiController');
+	Route::resource('/pengajuan', 'KepalaMuseum\PengajuanController');
+});
 
 Route::get('/logout', 'LoginController@logout');
 

@@ -4,7 +4,7 @@
 <div class="col-md-3">
  <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" alt="User profile picture" src="{{ asset('StaffDokumen/KoleksiController/' . $koleksi->gambar_koleksi) }}">
+              <img class="profile-user-img img-responsive img-circle" alt="User profile picture" src="{{ asset('storage/koleksi/thumb/'.$koleksi->gambar_koleksi) }}">
 
               <h3 class="profile-username text-center">{{ $koleksi->nama_koleksi}}</h3>
 

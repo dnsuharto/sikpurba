@@ -74,7 +74,10 @@
                             <a class="nav-link" href="{{ action('KepalaMuseum\DashboardController@index') }}">Dashboard <span class="sr-only" >(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ action('KepalaMuseum\DashboardController@konfirmasi') }}">Pengajuan Peraga <span class="sr-only" >(current)</span></a>
+                            <a class="nav-link" href="{{ action('KepalaMuseum\KoleksiController@index') }}">Koleksi<span class="sr-only" >(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ action('KepalaMuseum\PengajuanController@index') }}">Pengajuan<span class="sr-only" >(current)</span></a>
                         </li>
                         @endif
                         
