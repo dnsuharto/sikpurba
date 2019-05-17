@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('body')
+
 <div class="container-fluid">
   @if(Session::has('msg'))
         <div class="alert alert-success mt-3">
@@ -69,12 +70,14 @@
     </div>
   </div>
 </div>
+@endsection
 
-  <script type="text/javascript">
-    function hapus(id) {
-      $('#deleteModal').modal('show');
-      var action = $('#deleteModal form').attr('action');
-      $('#deleteModal form').attr('action', action+'/'+id);
-    }
-  </script>
+@section('script')
+<script type="text/javascript">
+  function hapus(id) {
+    $('#deleteModal').modal('show');
+    var action = $('#deleteModal form').attr('action');
+    $('#deleteModal form').attr('action', action+'/'+id);
+  }
+</script>
 @endsection
