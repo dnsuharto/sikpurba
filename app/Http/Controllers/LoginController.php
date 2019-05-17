@@ -31,7 +31,7 @@ class LoginController extends Controller
 
         // Posisi salah email atau password
         return redirect()->action('LoginController@login')
-        	->with('msg', 'Email atau Passwod Anda Salah')
+        	->with('msg', 'Email atau password Anda tidak tepat.')
         	->withInput(
         		$request->except('password')
         	);
