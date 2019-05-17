@@ -2,8 +2,14 @@
 
 @section('body')
 
-<div class="container-fluid">
-  @if(Session::has('msg'))
+<section class="content-header">
+      <h1>Staff</h1>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
+        @if(Session::has('msg'))
         <div class="alert alert-success mt-3">
           {{ session('msg') }}
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -11,41 +17,52 @@
           </button>
         </div>
         @endif
-<div class="card">
-  <div class="card-body">
-    <a href="{{ action('StaffTu\StaffController@create') }}" class="btn btn-primary btn-sm active" style="float: right;" role="button" aria-pressed="true">Tambah Staff</a>
+
+        <!-- general form elements -->
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Silahkan Login</h3>
+                <a href="{{ action('StaffTu\StaffController@create') }}" class="btn btn-primary btn-sm active" style="float: right;" role="button" aria-pressed="true">Tambah Staff</a>
+            </div>
+
+            <div class="box-body">
+
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">NIK</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Role</th>
+                            <th scope="col" width="100">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($staffs as $staff)
+                        <tr>
+                            <th>{{ $staff->nik }}</th>
+                            <td>{{ $staff->nama }}</td>
+                            <td>{{ $staff->email }}</td>
+                            <td>{{ $staff->role }}</td>
+                            <td>
+                                <a href="{{ action('StaffTu\StaffController@edit', $staff->id) }}" class="btn btn-primary btn-xs active" role="button" aria-pressed="true">Edit</a>
+                                <button onclick="hapus({{ $staff->id }})" class="btn btn-danger btn-xs active" role="button" aria-pressed="true">Hapus</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="box-footer clearfix">
+                {!! $staffs->links() !!}
+            </div>
+
+        </div>
+    </div>
   </div>
-	<table class="table">
-  	<thead class="thead-dark">
-    <tr>
-	      <th scope="col">NIK</th>
-	      <th scope="col">Nama</th>
-	      <th scope="col">Email</th>
-	      <th scope="col">Role</th>
-	      <th scope="col" width="200">Aksi</th>
-    </tr>
- 	</thead>
-  <tbody>
-
-    @foreach($staffs as $staff)
-    <tr>
-      <th>{{ $staff->nik }}</th>
-      <td>{{ $staff->nama }}</td>
-      <td>{{ $staff->email }}</td>
-      <td>{{ $staff->role }}</td>
-      <td>
-      	<a href="{{ action('StaffTu\StaffController@edit', $staff->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Edit</a>
-		    <button onclick="hapus({{ $staff->id }})" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</button>
-	    </td>
-    </tr>
-    @endforeach
-  </tbody>
-  </table>
-</div>
-
-{!! $staffs->links() !!}
-
-  </div>
+</section>
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
