@@ -3,7 +3,7 @@
 @section('body')
 
 <section class="content-header">
-      <h1>Staff</h1>
+      <h1>DATA STAFF</h1>
 </section>
 <section class="content">
   <div class="row">
@@ -21,8 +21,7 @@
         <!-- general form elements -->
         <div class="box box-primary">
             <div class="box-header with-border">
-                <h3 class="box-title">Silahkan Login</h3>
-                <a href="{{ action('StaffTu\StaffController@create') }}" class="btn btn-primary btn-sm active" style="float: right;" role="button" aria-pressed="true">Tambah Staff</a>
+                <a href="{{ action('StaffTu\StaffController@create') }}" class="btn btn-primary btn-sm active" style="float: left;" role="button" aria-pressed="true">Tambah Staff</a>
             </div>
 
             <div class="box-body">

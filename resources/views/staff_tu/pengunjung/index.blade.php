@@ -1,18 +1,23 @@
 @extends('layout')
 
 @section('body')
-<div class="container-fluid">
-<div class="card">
-<div class="card-body">
-</div>
-<table class="table">
+<section class="content-header">
+      <h1>DATA PENGUNJUNG</h1>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+<div class="box box-primary">
+<div class="box-body">
+
+<table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID Pengunjung</th>
       <th scope="col">Nama</th>
       <th scope="col">Email</th>
       <th scope="col">Tanggal Kunjungan</th>
-      <th scope="col">Aksi</th>
+      <th scope="col" width="100">Aksi</th>
     </tr>
   </thead>
   <tbody>
@@ -30,8 +35,12 @@
   </tbody>
 </table>
 </div>
-{!! $pengunjungs->links() !!}
+<div class="box-footer clearfix">
+  {!! $pengunjungs->links() !!}
 </div>
-
+</div>
+</div>
+</div>
+</section>
 
 @endsection

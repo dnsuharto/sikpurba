@@ -1,7 +1,14 @@
 @extends('layout')
 
 @section('body')
-  <div class="container-fluid">
+
+<section class="content-header">
+      <h1>INFORMASI KOLEKSI</h1>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+
     @if(Session::has('msg'))
         <div class="alert alert-success mt-3">
           {{ session('msg') }}
@@ -10,11 +17,13 @@
           </button>
         </div>
         @endif
-  <div class="card">
-  <div class="card-body">
-    <a href="{{ action('StaffDokumen\KoleksiController@create') }}" class="btn btn-primary btn-sm active" style="float: right;" role="button" aria-pressed="true">Tambah Koleksi</a>
+  <div class="box box-primary">
+  <div class="box-header with-border">
+    <a href="{{ action('StaffDokumen\KoleksiController@create') }}" class="btn btn-primary btn-sm active" style="float: left;" role="button" aria-pressed="true">Tambah Koleksi</a>
   </div>
-  <table class="table">
+
+  <div class="box-body">
+  <table class="table table-bordered">
     <thead class="thead-dark">
       <tr>
         <th scope="col">No Koleksi</th>
@@ -27,7 +36,7 @@
     	  <th scope="col">Penemu</th>
         <th scope="col">Status</th>
         <th scope="col">Status Pengajuan</th>
-        <th scope="col">Aksi</th>
+        <th scope="col" width="150">Aksi</th>
       </tr>
     </thead>
     <tbody>
@@ -61,17 +70,22 @@
             @endif
         </td>
         <td>
-        	<a href="{{ action('StaffDokumen\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
-          <a href="{{ action('StaffDokumen\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Edit</a>
-  		<button onclick="hapus({{ $koleksi->id }})" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</button>
+        	<a href="{{ action('StaffDokumen\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-xs active" role="button" aria-pressed="true">Lihat</a>
+          <a href="{{ action('StaffDokumen\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-xs active" role="button" aria-pressed="true">Edit</a>
+  		<button onclick="hapus({{ $koleksi->id }})" class="btn btn-danger btn-xs active" role="button" aria-pressed="true">Hapus</button>
   	  </td>
       </tr>
      @endforeach
     </tbody>
   </table>
 </div>
+<div class="box-footer clearfix">
       {!! $koleksis->links() !!}
 </div>
+</div>
+</div>
+</div>
+</section>
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -95,6 +109,8 @@
       </div>
     </div>
   </div>
+  @endsection
+  @section('script')
   <script type="text/javascript">
     function hapus(id) {
       $('#deleteModal').modal('show');
