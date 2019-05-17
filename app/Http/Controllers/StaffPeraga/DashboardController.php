@@ -8,11 +8,11 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller{
      public function index()
     {
-        return view('staf_peraga.index');
+        return view('staff_peraga.index');
     }
     public function pengajuan()
     {
-        return view('staf_peraga.pengajuan');
+        return view('staff_peraga.pengajuan');
     }
 }
 

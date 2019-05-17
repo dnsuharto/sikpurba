@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>{{ config('app.name') }}</title>
+
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.7 -->
@@ -25,6 +26,9 @@
         <![endif]-->
         <!-- Google Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/dropify.min.css') }}">
+        <!-- Styles -->
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
 
@@ -54,39 +58,21 @@
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="{{ asset('themes/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">{{ Auth::user()->nama }}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
                                         <img src="{{ asset('themes/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                                         <p>
-                                            Alexander Pierce - Web Developer
-                                            <small>Member since Nov. 2012</small>
+                                            {{ Auth::user()->nama }}
+                                            <small>Staff sejak, {{ date('m Y', strtotime(Auth::user()->created_at)) }}</small>
                                         </p>
-                                    </li>
-                                    <!-- Menu Body -->
-                                    <li class="user-body">
-                                        <div class="row">
-                                            <div class="col-xs-4 text-center">
-                                                <a href="#">Followers</a>
-                                            </div>
-                                            <div class="col-xs-4 text-center">
-                                                <a href="#">Sales</a>
-                                            </div>
-                                            <div class="col-xs-4 text-center">
-                                                <a href="#">Friends</a>
-                                            </div>
-                                        </div>
-                                        <!-- /.row -->
                                     </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
-                                        <div class="pull-left">
-                                            <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                        </div>
                                         <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="{{ action('LoginController@logout') }}" class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -107,7 +93,7 @@
                             <li><a href="{{ action('LoginController@login') }}"><i class="fa fa-lock"></i><span>Login</span></a></li>
                         @else
                             @php
-                                $user = Auth::user();
+                                $staff = Auth::user();
                             @endphp
                             <li class="header">MAIN NAVIGATION</li>
 
@@ -125,7 +111,7 @@
                             </li>
                             <li>
                                 <a href="{{ action('StaffTu\PengunjungController@index') }}">
-                                    <i class="fa fa-user"></i> <span>Pengunjung</span>
+                                    <i class="fa fa-group"></i> <span>Pengunjung</span>
                                 </a>
                             </li>
                             @endif
@@ -166,20 +152,16 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ action('KepalaMuseum\DashboardController@konfirmasi') }}">
+                                <a href="{{ action('StaffDokumen\KoleksiController@index') }}">
+                                    <i class="fa fa-file"></i> <span>Koleksi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ action('KepalaMuseum\PengajuanController@konfirmasi') }}">
                                     <i class="fa fa-file"></i> <span>Pengajuan</span>
                                 </a>
                             </li>
                             @endif
-
-
-
-
-                            <li>
-                                <a href="{{ action('LoginController@logout') }}">
-                                    <i class="fa fa-dashboard"></i> <span>Logout</span>
-                                </a>
-                            </li>
 
                         @endif
                     </ul>
@@ -212,6 +194,7 @@
             reserved.
         </footer>
         @yield('body')
+        <script type="text/javascript" src="{{ asset('js/jquery.js') }}?v=baru"></script>
 
         <!-- jQuery 3 -->
         <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
@@ -230,5 +213,8 @@
               $('.sidebar-menu').tree()
             })
         </script>
+
+        <script type="text/javascript" src="{{ asset('js/dropify.js') }}"></script>
+
     </body>
 </html>

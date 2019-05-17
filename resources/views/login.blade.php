@@ -26,11 +26,11 @@
 
 		                <div class="form-group">
 		                    <label for="exampleInputEmail1">Email</label>
-		                    <input value="{{ old('email') }}" type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan email">
+		                    <input value="{{ old('email') }}" name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Masukkan email">
 		                </div>
 		                <div class="form-group">
 		                    <label for="exampleInputPassword1">Password</label>
-		                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		                    <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 		                </div>
 		            </div>
 		            <!-- /.box-body -->

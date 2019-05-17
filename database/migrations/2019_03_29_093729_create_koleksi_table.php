@@ -16,13 +16,15 @@ class CreateKoleksiTable extends Migration
         Schema::create('koleksi', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->string('gambar_koleksi');
-            $table->string('nomor_koleksi', 30)->unique();
+            $table->string('no_koleksi', 30)->unique();
             $table->string('nama_koleksi');
-            $table->enum('jenis_benda',['batuan','fosil','lainnya']);
-            $table->string('asal_benda');
+            $table->enum('jenis_koleksi',['batuan','fosil','lainnya']);
+            $table->string('asal_koleksi');
             $table->date('tgl_ditemukan');
             $table->integer('usia')->nullable();
             $table->string('penemu');
+            $table->enum('status',['nonperaga','peraga']);
+            $table->enum('status_pengajuan',['belum','sedang','telah']);
             $table->timestamps();
         });
     }

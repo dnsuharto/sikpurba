@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
      		/*data  staff peraga*/
        		$staff = new Staff;
-	        $staff -> email = 'staffperaga1@sikpurba.com';
+	        $staff -> email = 'staffperaga@sikpurba.com';
 	        $staff -> nik = '3411151125';
 	        $staff -> nama = 'nisa';
 	        $staff -> role = 'staff_peraga';
@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 	       	$staff -> save();
 
 	       	$staff = new Staff;
-	        $staff -> email = 'staffperaga2@sikpurba.com';
+	        $staff -> email = 'staffperaga1@sikpurba.com';
 	        $staff -> nik = '3411151120';
 	        $staff -> nama = 'mela';
 	        $staff -> role = 'staff_peraga';
@@ -65,35 +65,49 @@ class DatabaseSeeder extends Seeder
 	       	/*Data Koleksi*/
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->nomor_koleksi = 'A123';
+	       	$koleksi->no_koleksi = 'A123';
 	       	$koleksi->nama_koleksi = 'Batu Kecubung';
-	       	$koleksi->jenis_benda = 'batuan';
-	       	$koleksi->asal_benda = 'Pangkalan Bun';
+	       	$koleksi->jenis_koleksi = 'batuan';
+	       	$koleksi->asal_koleksi = 'Pangkalan Bun';
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
 	       	$koleksi->usia = 600;
 	       	$koleksi->penemu = 'Tim Geologi';
+	       	$koleksi->status = 'nonperaga';
+	       	$koleksi-> status_pengajuan = 'sedang';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
-	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->nomor_koleksi = 'B123';
-	       	$koleksi->nama_koleksi = 'Tulang Belikat Homosafiens';
-	       	$koleksi->jenis_benda = 'fosil';
-	       	$koleksi->asal_benda = 'Ujungpandang';
-	       	$koleksi->tgl_ditemukan = '2012-03-10';
-	       	$koleksi->usia = 1500;
-	       	$koleksi->penemu = 'Noval';
+	       	$koleksi-> gambar_koleksi = '';
+	       	$koleksi-> no_koleksi = 'B123';
+	       	$koleksi-> nama_koleksi = 'Tulang Belikat Homosafiens';
+	       	$koleksi-> jenis_koleksi = 'fosil';
+	       	$koleksi-> asal_koleksi = 'Ujungpandang';
+	       	$koleksi-> tgl_ditemukan = '2012-03-10';
+	       	$koleksi-> usia = 1500;
+	       	$koleksi-> penemu = 'Noval';
+	       	$koleksi-> status = 'peraga';
+	       	$koleksi-> status_pengajuan = 'telah';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
-	       	$koleksi->gambar_koleksi = '';
-	       	$koleksi->nomor_koleksi = 'C123';
-	       	$koleksi->nama_koleksi = 'Etanol';
-	       	$koleksi->jenis_benda = 'lainnya';
-	       	$koleksi->asal_benda = 'Palembang';
-	       	$koleksi->tgl_ditemukan = '2010-12-03';
-	       	$koleksi->penemu = 'Noval';
+	       	$koleksi-> gambar_koleksi = '';
+	       	$koleksi-> no_koleksi = 'C123';
+	       	$koleksi-> nama_koleksi = 'Etanol';
+	       	$koleksi-> jenis_koleksi = 'lainnya';
+	       	$koleksi-> asal_koleksi = 'Palembang';
+	       	$koleksi-> tgl_ditemukan = '2010-12-03';
+	       	$koleksi-> penemu = 'Noval';
+	       	$koleksi-> status = 'nonperaga';
+            $koleksi-> status_pengajuan = 'belum';
 	       	$koleksi -> save();
 
+
+	       	$pengunjung = new Pengunjung;
+	       	$pengunjung-> id_pengunjung = '12345';
+	       	$pengunjung-> nama = 'Hendra';
+	       	$pengunjung-> email = 'hendra@gmail.com';
+	       	$pengunjung-> password = bcrypt('12345');
+	       	$pengunjung-> tgl_kunjungan = '2019-03-01';
+	       	$pengunjung-> save();
     }
 }
