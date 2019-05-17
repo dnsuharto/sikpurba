@@ -168,7 +168,8 @@
                 </section>
                 <!-- /.sidebar -->
             </aside>
-
+            
+        
             <div class="content-wrapper">
                 @yield('body')
             </div>
@@ -181,19 +182,7 @@
                 reserved.
             </footer>
         </div>
-        
-        <div class="content-wrapper">
-            @yield('body')
-        </div>
 
-        <footer class="main-footer">
-            <div class="pull-right hidden-xs">
-                <b>Version</b> 1.0
-            </div>
-            <strong>Copyright &copy; 2019 <a href="{{ asset('') }}">{{ config('app.name') }}</a>.</strong> All rights
-            reserved.
-        </footer>
-        @yield('body')
         <script type="text/javascript" src="{{ asset('js/jquery.js') }}?v=baru"></script>
 
         <!-- jQuery 3 -->
