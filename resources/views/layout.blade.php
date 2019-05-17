@@ -88,14 +88,14 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu" data-widget="tree">
                         @if(!Auth::check())
-                            <li class="header">MAIN NAVIGATION</li>
+                            <li class="header">MENU UTAMA</li>
                             <li><a href="{{ action('HomeController@index') }}"><i class="fa fa-home"></i><span>Home</span></a></li>
                             <li><a href="{{ action('LoginController@login') }}"><i class="fa fa-lock"></i><span>Login</span></a></li>
                         @else
                             @php
                                 $staff = Auth::user();
                             @endphp
-                            <li class="header">MAIN NAVIGATION</li>
+                            <li class="header">MENU UTAMA</li>
 
                             <!-- STAFF TU-->
                             @if($staff->role == 'staff_tu')
