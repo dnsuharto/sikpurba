@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\StaffDokumentasi;
+namespace App\Http\Controllers\StaffPeragaan;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class VetebrataController extends Controller
+class VertebrataController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class VetebrataController extends Controller
      */
     public function index()
     {
-        return view('staff_dokumentasi.koleksi.vertebrata.index');
+       return view('staff_peragaan.pengajuan.vertebrata.index');
     }
 
     /**

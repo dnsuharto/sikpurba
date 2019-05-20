@@ -144,19 +144,21 @@
                             <!-- STAFF DOKUMEN-->
                             @if($staff->role == 'staff_dokumentasi')
                             <li>
-                                <a href="{{ action('StaffDokumentasi\DashboardController@index') }}">
+                                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}">
+                                    <?php //href="{{ action('StaffDokumentasi\DashboardController@index') }}"?>
                                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 </a>
                             </li>
                             <li class="treeview menu-open">
-                                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}">
+                                <a>
                                     <i class="fa fa-pie-chart"></i> <span>Koleksi</span>
                                     <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
+                                    <i class="fa fa-angle-left pull-right">
+                                    </i>
                                     </span>
                                 </a>
                                 <ul class="treeview-menu" style="display: block;">
-                                        <li><a href="{{ action('StaffDokumentasi\VetebrataController@index') }}"><i class="fa fa-circle-o"></i>Vetebrata & Hominid</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\VertebrataController@index') }}"><i class="fa fa-circle-o"></i>Vertebrata & Hominid</a></li>
                                         <li><a href="{{ action('StaffDokumentasi\BatuanController@index') }}"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
                                         <li><a href="{{ action('StaffDokumentasi\MoluscaController@index') }}"><i class="fa fa-circle-o"></i>Molusca</a></li>
                                         <li><a href="{{ action('StaffDokumentasi\ArtefakController@index') }}"><i class="fa fa-circle-o"></i>Artefak</a></li>
