@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\StaffDokumen;
+namespace App\Http\Controllers\StaffDokumentasi;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,7 +19,7 @@ class KoleksiController extends Controller
     {
         $koleksis = Koleksi::paginate(10);
         
-        return view('staff_dokumen.koleksi.index')->with('koleksis', $koleksis);
+        return view('staff_dokumentasi.koleksi.index')->with('koleksis', $koleksis);
     }
 
     /**
@@ -29,7 +29,7 @@ class KoleksiController extends Controller
      */
     public function create()
     {
-        return view('staff_dokumen.koleksi.create');
+        return view('staff_dokumentasi.koleksi.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class KoleksiController extends Controller
         $koleksi -> status_pengajuan = $request->input('status_pengajuan');
         $koleksi -> save();
 
-         return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil ditambahkan');
+         return redirect()->action('StaffDokumentasi\KoleksiController@index')->with('msg', 'Data berhasil ditambahkan');
     }
 
     /**
@@ -97,7 +97,7 @@ class KoleksiController extends Controller
     {
         $koleksi = Koleksi::find($id);
         
-        return view('staff_dokumen.koleksi.show')->with('koleksi', $koleksi);
+        return view('staff_dokumentasi.koleksi.show')->with('koleksi', $koleksi);
     }
 
     /**
@@ -110,7 +110,7 @@ class KoleksiController extends Controller
     {
         $koleksi = Koleksi::find($id);
 
-        return view('staff_dokumen.koleksi.edit')->with('koleksi', $koleksi);
+        return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi);
     }
 
     /**
@@ -164,7 +164,7 @@ class KoleksiController extends Controller
         $koleksi -> status_pengajuan = $request->input('status_pengajuan');
         $koleksi -> save();
 
-         return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil diedit');
+         return redirect()->action('StaffDokumentasi\KoleksiController@index')->with('msg', 'Data berhasil diedit');
     }
 
     /**
@@ -178,7 +178,7 @@ class KoleksiController extends Controller
         $koleksi = Koleksi::find($id);
         $koleksi->delete(); 
         Storage::delete(['public/koleksi/'.$koleksi->gambar_koleksi, 'public/koleksi/thumb/'.$koleksi->gambar_koleksi]);
-        return redirect()->action('StaffDokumen\KoleksiController@index')->with('msg', 'Data berhasil dihapus');
+        return redirect()->action('StaffDokumentasi\KoleksiController@index')->with('msg', 'Data berhasil dihapus');
 
     }
 }

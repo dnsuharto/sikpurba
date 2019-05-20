@@ -29,27 +29,27 @@ class DatabaseSeeder extends Seeder
 
      		/*data  staff peraga*/
        		$staff = new Staff;
-	        $staff -> email = 'staffperaga@sikpurba.com';
+	        $staff -> email = 'staffperagaan@sikpurba.com';
 	        $staff -> nik = '3411151125';
 	        $staff -> nama = 'nisa';
-	        $staff -> role = 'staff_peraga';
+	        $staff -> role = 'staff_peragaan';
 	       	$staff -> password = bcrypt('12345');
 	       	$staff -> save();
 
 	       	$staff = new Staff;
-	        $staff -> email = 'staffperaga1@sikpurba.com';
+	        $staff -> email = 'staffperagaan1@sikpurba.com';
 	        $staff -> nik = '3411151120';
 	        $staff -> nama = 'mela';
-	        $staff -> role = 'staff_peraga';
+	        $staff -> role = 'staff_peragaan';
 	       	$staff -> password = bcrypt('12345');
 	       	$staff -> save();
 
 	       	/*data staff*/
 	       	$staff = new Staff;
-	        $staff -> email = 'staffdokumen@sikpurba.com';
+	        $staff -> email = 'staffdokumentasi@sikpurba.com';
 	        $staff -> nik = '3411151185';
 	        $staff -> nama = 'bambang';
-	        $staff -> role = 'staff_dokumen';
+	        $staff -> role = 'staff_dokumentasi';
 	       	$staff -> password = bcrypt('12345');
 	       	$staff -> save();
 

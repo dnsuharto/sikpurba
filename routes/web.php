@@ -23,13 +23,23 @@ Route::group(['prefix' => '/staff_tu'], function(){
 	Route::resource('/staff', 'StaffTu\StaffController');
 	Route::resource('/pengunjung', 'StaffTu\PengunjungController');
 });
+Route::group(['prefix' => 'staff_peragaan'], function(){
+	Route::get('/staff_peragaan/dashboard', 'StaffPeragaan\DashboardController@index');
+	Route::resource('/molusca', 'StaffPeragaan\MoluscaController');
+	Route::resource('/vetebrata', 'StaffPeragaan\VetebrataController');
+	Route::resource('/artefak', 'StaffPeragaan\ArtefakController');
+	Route::resource('/batuan', 'StaffPeragaan\BatuanController');
+});
 
-Route::get('/staff_peraga/dashboard', 'StaffPeraga\DashboardController@index');
-Route::get('/staff_peraga/dashboard/pengajuan', 'StaffPeraga\DashboardController@pengajuan');
+Route::group(['prefix' => 'staff_dokumentasi'], function(){
+	Route::get('/dashboard', 'StaffDokumentasi\DashboardController@index');
+	Route::resource('/koleksi', 'StaffDokumentasi\KoleksiController');
+	Route::resource('/pengajuan', 'StaffDokumentasi\PengajuanController');
+	Route::resource('/molusca', 'StaffOkumentasi\MoluscaController');
+	Route::resource('/vetebrata', 'StaffOkumentasi\VetebrataController');
+	Route::resource('/artefak', 'StaffOkumentasi\ArtefakController');
+	Route::resource('/batuan', 'StaffOkumentasi\BatuanController');
 
-Route::group(['prefix' => 'staff_dokumen'], function(){
-	Route::get('/dashboard', 'StaffDokumen\DashboardController@index');
-	Route::resource('/koleksi', 'StaffDokumen\KoleksiController');
 });
 
 Route::group(['prefix' => 'kepala_museum'], function(){

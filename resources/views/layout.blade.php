@@ -95,6 +95,7 @@
                         @else
                             @php
                                 $staff = Auth::user();
+                         
                             @endphp
                             <li class="header">MENU UTAMA</li>
 
@@ -118,30 +119,54 @@
                             @endif
 
                             <!-- STAFF PERAGA-->
-                            @if($staff->role == 'staff_peraga')
+                            @if($staff->role == 'staff_peragaan')
                             <li>
-                                <a href="{{ action('StaffPeraga\DashboardController@index') }}">
+                                <a href="{{ action('StaffPeragaan\DashboardController@index') }}">
                                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ action('StaffPeraga\DashboardController@pengajuan') }}">
+                            <li class="treeview menu-open">
+                                <a>
                                     <i class="fa fa-file"></i> <span>Pengajuan</span>
+                                    <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
                                 </a>
+                                <ul class="treeview-menu" style="display: block;">
+                                        <li><a href="{{ action('StaffPeragaan\VetebrataController@index') }}"><i class="fa fa-circle-o"></i>Vetebrata & Hominid</a></li>
+                                        <li><a href="{{ action('StaffPeragaan\BatuanController@index') }}"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
+                                        <li><a href="{{ action('StaffPeragaan\MoluscaController@index') }}"><i class="fa fa-circle-o"></i>Molusca</a></li>
+                                        <li><a href="{{ action('StaffPeragaan\ArtefakController@index') }}"><i class="fa fa-circle-o"></i>Artefak</a></li>
+                             </ul>
                             </li>
                             @endif
 
                             <!-- STAFF DOKUMEN-->
-                            @if($staff->role == 'staff_dokumen')
+                            @if($staff->role == 'staff_dokumentasi')
                             <li>
-                                <a href="{{ action('StaffDokumen\DashboardController@index') }}">
+                                <a href="{{ action('StaffDokumentasi\DashboardController@index') }}">
                                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ action('StaffDokumen\KoleksiController@index') }}">
-                                    <i class="fa fa-file"></i> <span>Koleksi</span>
+                            <li class="treeview menu-open">
+                                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}">
+                                    <i class="fa fa-pie-chart"></i> <span>Koleksi</span>
+                                    <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                    </span>
                                 </a>
+                                <ul class="treeview-menu" style="display: block;">
+                                        <li><a href="{{ action('StaffDokumentasi\VetebrataController@index') }}"><i class="fa fa-circle-o"></i>Vetebrata & Hominid</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\BatuanController@index') }}"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\MoluscaController@index') }}"><i class="fa fa-circle-o"></i>Molusca</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\ArtefakController@index') }}"><i class="fa fa-circle-o"></i>Artefak</a></li>
+                             </ul>
+                            </li>
+                            <li>
+                                <a href="{{ action('StaffDokumentasi\PengajuanController@index') }}">
+                                    <i class="fa fa-file"></i> <span>Pengajuan</span>
+                                </a>
+                            </li>
                             </li>
                             @endif
 

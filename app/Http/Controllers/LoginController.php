@@ -23,10 +23,10 @@ class LoginController extends Controller
             	return redirect()->action('StaffTu\DashboardController@index');
             if($staff->role=='kepala_museum')
             	return redirect()->action('KepalaMuseum\DashboardController@index');
-            if($staff->role=='staff_peraga')
-            	return redirect()->action('StaffPeraga\DashboardController@index');
-            if($staff->role=='staff_dokumen')
-            	return redirect()->action('StaffDokumen\DashboardController@index');
+            if($staff->role=='staff_peragaan')
+            	return redirect()->action('StaffPeragaan\DashboardController@index');
+            if($staff->role=='staff_dokumentasi')
+            	return redirect()->action('StaffDokumentasi\DashboardController@index');
         }
 
         // Posisi salah email atau password

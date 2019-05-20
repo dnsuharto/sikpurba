@@ -19,7 +19,7 @@
         @endif
   <div class="box box-primary">
   <div class="box-header with-border">
-    <a href="{{ action('StaffDokumen\KoleksiController@create') }}" class="btn btn-primary btn-sm active" style="float: left;" role="button" aria-pressed="true">Tambah Koleksi</a>
+    <a href="{{ action('StaffDokumentasi\KoleksiController@create') }}" class="btn btn-primary btn-sm active" style="float: left;" role="button" aria-pressed="true">Tambah Koleksi</a>
   </div>
 
   <div class="box-body">
@@ -70,8 +70,8 @@
             @endif
         </td>
         <td>
-        	<a href="{{ action('StaffDokumen\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-xs active" role="button" aria-pressed="true">Lihat</a>
-          <a href="{{ action('StaffDokumen\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-xs active" role="button" aria-pressed="true">Edit</a>
+        	<a href="{{ action('StaffDokumentasi\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-xs active" role="button" aria-pressed="true">Lihat</a>
+          <a href="{{ action('StaffDokumentasi\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-xs active" role="button" aria-pressed="true">Edit</a>
   		<button onclick="hapus({{ $koleksi->id }})" class="btn btn-danger btn-xs active" role="button" aria-pressed="true">Hapus</button>
   	  </td>
       </tr>
@@ -95,7 +95,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form style="text-align: left;" action="{{ action('StaffDokumen\KoleksiController@index') }}" method="post">
+        <form style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@index') }}" method="post">
           @csrf
           <input type="hidden" name="_method" value="DELETE">
           <div class="modal-body">

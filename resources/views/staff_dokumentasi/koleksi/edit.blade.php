@@ -44,7 +44,7 @@ if(old('status_pengajuan')!=null){
 	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
 	  <div class="card-body">
 	    <h5 class="card-title" style="text-align: center;">Edit Koleksi</h5>
-	   		<form enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumen\KoleksiController@update', $koleksi->id) }}" method="post">
+	   		<form enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@update', $koleksi->id) }}" method="post">
 		    	@csrf
 			  <input type="hidden" name="_method" value="PUT">
 			  <div class="form-group">

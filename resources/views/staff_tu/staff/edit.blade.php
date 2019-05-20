@@ -20,6 +20,17 @@ if(old('role')!=null){
 	$role = old('role');
 }
 ?>
+<section class="content-header">
+      <h1>INFORMASI KOLEKSI</h1>
+</section>
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+    	
+ <div class="box box-primary">
+  <div class="box-header with-border">
+
+<?php /*
 <div class="container" style="margin-top: 20px; text-align: center;">
 	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
 	  <div class="card-body">
@@ -57,6 +68,7 @@ if(old('role')!=null){
 				    <option value="staff_peraga" @if($role  == 'staff_peraga') selected=true @endif>Staff Peraga</option>
 				  </select>
 			  </div>
+
 <!--
 			  @if(Session::has('msg'))
 			  <div style="color: red; font-size: 0.9em; margin-bottom: 20px; margin-top: -20px;">
@@ -71,6 +83,6 @@ if(old('role')!=null){
 	  </div>
 	</div>
 </div>
-
+*/?>
 
 @endsection
