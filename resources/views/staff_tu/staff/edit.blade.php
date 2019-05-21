@@ -21,21 +21,27 @@ if(old('role')!=null){
 }
 ?>
 <section class="content-header">
-      <h1>INFORMASI KOLEKSI</h1>
+      <h1>INFORMASI STAFF</h1>
 </section>
 <section class="content">
   <div class="row">
     <div class="col-md-12">
+    	@if(Session::has('msg'))
+        <div class="alert alert-success mt-3">
+          {{ session('msg') }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        @endif
     	
  <div class="box box-primary">
   <div class="box-header with-border">
-
-<?php /*
-<div class="container" style="margin-top: 20px; text-align: center;">
-	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
-	  <div class="card-body">
-	    <h5 class="card-title" style="text-align: center;">Edit Staff</h5>
-	   		<form style="text-align: left;" action="{{ action('StaffTu\StaffController@update', $staff->id) }}" method="post">
+  </div>
+  <div class="box-body">
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+    	<form style="text-align: center;" action="{{ action('StaffTu\StaffController@update', $staff->id) }}" method="post">
 		    	@csrf
 			  <input type="hidden" name="_method" value="PUT">
 			  <div class="form-group">
@@ -68,6 +74,24 @@ if(old('role')!=null){
 				    <option value="staff_peraga" @if($role  == 'staff_peraga') selected=true @endif>Staff Peraga</option>
 				  </select>
 			  </div>
+			  <div style="text-align: center;">
+				  <button type="submit" class="btn btn-primary">Simpan</button>
+			  </div>
+			</form>
+		</thead>
+	</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<?php /*
+<div class="container" style="margin-top: 20px; text-align: center;">
+	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
+	  <div class="card-body">
+	    <h5 class="card-title" style="text-align: center;">Edit Staff</h5>
+	   		
 
 <!--
 			  @if(Session::has('msg'))
@@ -76,9 +100,7 @@ if(old('role')!=null){
 			  </div>
 			  @endif
 -->
-			  <div style="text-align: center;">
-				  <button type="submit" class="btn btn-primary">Simpan</button>
-			  </div>
+			  
 			</form>
 	  </div>
 	</div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMoluscaTable extends Migration
+class CreateMolluscaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateMoluscaTable extends Migration
      */
     public function up()
     {
-        Schema::create('molusca', function (Blueprint $table) {
+        Schema::create('mollusca', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('koleksi_id')->unsigned();
+            $table->decimal('ukuran');
+            $table->string('bentuk');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateMoluscaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('molusca');
+        Schema::dropIfExists('mollusca');
     }
 }

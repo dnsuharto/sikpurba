@@ -45,7 +45,20 @@
         <td>{{ $koleksi->no_koleksi }}</td>
         <td><img class="img-fluid" src="{{ asset('storage/koleksi/thumb/'.$koleksi->gambar_koleksi) }}"></td>
         <td>{{ $koleksi->nama_koleksi }}</td>
-        <td>{{ $koleksi->jenis_koleksi }}</td>
+        <td>
+          @if($koleksi->jenis_koleksi=='batuan')
+          <div>Batuan & Mineral</div>
+          @endif
+          @if($koleksi->jenis_koleksi=='vertebrata')
+          <div>Vertebrata & Hominid</div>
+          @endif
+          @if($koleksi->jenis_koleksi=='molusca')
+          <div>Molusca</div>
+          @endif
+          @if($koleksi->jenis_koleksi=='artefak')
+          <div>Artefak</div>
+          @endif
+        </td>
         <td>{{ $koleksi->asal_koleksi }}</td>
         <td>{{ $koleksi->tgl_ditemukan }}</td>
         <td>{{ $koleksi->usia }}</td>

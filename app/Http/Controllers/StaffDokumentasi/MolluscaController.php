@@ -5,7 +5,7 @@ namespace App\Http\Controllers\StaffDokumentasi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class MoluscaController extends Controller
+class MolluscaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MoluscaController extends Controller
      */
     public function index()
     {
-        return view('staff_dokumentasi.koleksi.molusca.index');
+        return view('staff_dokumentasi.koleksi.mollusca.index');
     }
 
     /**

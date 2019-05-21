@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+..<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -113,7 +113,7 @@
                             </li>
                             <li>
                                 <a href="{{ action('StaffTu\PengunjungController@index') }}">
-                                    <i class="fa fa-group"></i> <span>Pengunjung</span>
+                                    <i class="fa fa-users"></i> <span>Pengunjung</span>
                                 </a>
                             </li>
                             @endif
@@ -133,7 +133,7 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu" style="display: block;">
-                                        <li><a href="{{ action('StaffPeragaan\VetebrataController@index') }}"><i class="fa fa-circle-o"></i>Vetebrata & Hominid</a></li>
+                                        <li><a href="{{ action('StaffPeragaan\VertebrataController@index') }}"><i class="fa fa-circle-o"></i>Vertebrata & Hominid</a></li>
                                         <li><a href="{{ action('StaffPeragaan\BatuanController@index') }}"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
                                         <li><a href="{{ action('StaffPeragaan\MoluscaController@index') }}"><i class="fa fa-circle-o"></i>Molusca</a></li>
                                         <li><a href="{{ action('StaffPeragaan\ArtefakController@index') }}"><i class="fa fa-circle-o"></i>Artefak</a></li>
@@ -151,7 +151,7 @@
                             </li>
                             <li class="treeview menu-open">
                                 <a>
-                                    <i class="fa fa-pie-chart"></i> <span>Koleksi</span>
+                                    <i class="fa fa-paw"></i> <span>Koleksi</span>
                                     <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right">
                                     </i>
@@ -180,13 +180,18 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ action('StaffDokumen\KoleksiController@index') }}">
-                                    <i class="fa fa-file"></i> <span>Koleksi</span>
+                                <a href="{{ action('KepalaMuseum\KoleksiController@index') }}">
+                                    <i class="fa fa-paw"></i> <span>Koleksi</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ action('KepalaMuseum\PengajuanController@konfirmasi') }}">
+                                <a href="{{ action('KepalaMuseum\PengajuanController@index') }}">
                                     <i class="fa fa-file"></i> <span>Pengajuan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ action('StaffTu\PengunjungController@index') }}">
+                                    <i class="fa fa-users"></i> <span>Pengunjung</span>
                                 </a>
                             </li>
                             @endif

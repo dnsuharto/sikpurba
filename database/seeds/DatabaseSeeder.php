@@ -5,7 +5,8 @@ use App\User;
 use App\Staff;
 use App\pengunjung;
 use App\Koleksi;
-
+use App\Vertebrata;
+use App\Mollusca;
 
 class DatabaseSeeder extends Seeder
 {
@@ -80,7 +81,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi-> gambar_koleksi = '';
 	       	$koleksi-> no_koleksi = 'B123';
 	       	$koleksi-> nama_koleksi = 'Tulang Belikat Homosafiens';
-	       	$koleksi-> jenis_koleksi = 'fosil';
+	       	$koleksi-> jenis_koleksi = 'vertebrata';
 	       	$koleksi-> asal_koleksi = 'Ujungpandang';
 	       	$koleksi-> tgl_ditemukan = '2012-03-10';
 	       	$koleksi-> usia = 1500;
@@ -93,13 +94,28 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi-> gambar_koleksi = '';
 	       	$koleksi-> no_koleksi = 'C123';
 	       	$koleksi-> nama_koleksi = 'Etanol';
-	       	$koleksi-> jenis_koleksi = 'lainnya';
+	       	$koleksi-> jenis_koleksi = 'batuan';
 	       	$koleksi-> asal_koleksi = 'Palembang';
 	       	$koleksi-> tgl_ditemukan = '2010-12-03';
 	       	$koleksi-> penemu = 'Noval';
 	       	$koleksi-> status = 'nonperaga';
             $koleksi-> status_pengajuan = 'belum';
 	       	$koleksi -> save();
+
+
+	       	$vertebrata = new Vertebrata;
+	       	$vertebrata -> spesies = '';
+	       	$vertebrata -> koleksi_id = $koleksi->id;
+	       	$vertebrata -> tinggi= 8.2;
+	       	$vertebrata -> panjang = 6.5;
+	       	$vertebrata -> berat = 7.3;
+	       	$vertebrata -> save();
+
+	       	$mollusca= new Mollusca;
+	       	$mollusca-> koleksi_id = $koleksi->id;
+	       	$mollusca-> ukuran= 8.2;
+	       	$mollusca-> bentuk='pipih';
+	       	$mollusca-> save();
 
 
 	       	$pengunjung = new Pengunjung;

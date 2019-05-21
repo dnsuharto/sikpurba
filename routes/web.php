@@ -25,7 +25,7 @@ Route::group(['prefix' => '/staff_tu'], function(){
 });
 Route::group(['prefix' => 'staff_peragaan'], function(){
 	Route::get('/staff_peragaan/dashboard', 'StaffPeragaan\DashboardController@index');
-	Route::resource('/molusca', 'StaffPeragaan\MoluscaController');
+	Route::resource('/mollusca', 'StaffPeragaan\MolluscaController');
 	Route::resource('/vertebrata', 'StaffPeragaan\VertebrataController');
 	Route::resource('/artefak', 'StaffPeragaan\ArtefakController');
 	Route::resource('/batuan', 'StaffPeragaan\BatuanController');
@@ -35,7 +35,7 @@ Route::group(['prefix' => 'staff_dokumentasi'], function(){
 	Route::get('/dashboard', 'StaffDokumentasi\DashboardController@index');
 	Route::resource('/koleksi', 'StaffDokumentasi\KoleksiController');
 	Route::resource('/pengajuan', 'StaffDokumentasi\PengajuanController');
-	Route::resource('/molusca', 'StaffDokumentasi\MoluscaController');
+	Route::resource('/mollusca', 'StaffDokumentasi\MolluscaController');
 	Route::resource('/vertebrata', 'StaffDokumentasi\VertebrataController');
 	Route::resource('/artefak', 'StaffDokumentasi\ArtefakController');
 	Route::resource('/batuan', 'StaffDokumentasi\BatuanController');
