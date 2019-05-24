@@ -2,6 +2,35 @@
 
 @section('body')
 
+<section class="content">
+	<div class="box box-info">
+	    <div class="box-header with-border">
+	        <h3 class="box-title">Horizontal Form</h3>
+	    </div>
+	    <!-- /.box-header -->
+	    <!-- form start -->
+	    <form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@store') }}" method="post">
+		    	@csrf
+	        <div class="box-body">
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">No. Koleksi</label>
+	                <div class="col-sm-10">
+	                	<input name="no_koleksi" value="{{ old('no_koleksi') }}" class="form-control" placeholder="Masukkan No Koleksi">
+				    	@if ($errors->has('no_koleksi')) 
+					    	<div style="color: #ff0000 ">{{ $errors->first('no_koleksi') }}</div>
+					    @endif
+	                </div>
+	            </div>
+	        </div>
+	        <!-- /.box-body -->
+	        <div class="box-footer">
+	            <button type="submit" class="btn btn-info pull-right">Sign in</button>
+	        </div>
+	        <!-- /.box-footer -->
+	    </form>
+	</div>
+</section>
+
 <div class="container" style="margin-top: 20px; text-align: center;">
 	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
 	  <div class="card-body">
