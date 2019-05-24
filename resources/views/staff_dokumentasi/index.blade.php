@@ -19,7 +19,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="ion-ios-paw-outline"></i></span>
+            <span class="info-box-icon bg-red"><i class="fa fa-hand-rock-o"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Batuan & Mineral</span>
@@ -36,7 +36,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+            <span class="info-box-icon bg-green"><i class="ion ion-ios-cloud-outline"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Mollusca</span>
@@ -49,7 +49,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-gear-outline"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Artefak</span>
