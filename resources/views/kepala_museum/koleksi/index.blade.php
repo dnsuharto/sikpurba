@@ -60,8 +60,8 @@
             @endif
         </td>
         <td>
-        	<a href="{{ action('StaffDokumen\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
-          <a href="{{ action('StaffDokumen\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Edit</a>
+        	<a href="{{ action('KepalaMuseum\KoleksiController@show', $koleksi->id) }}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Lihat</a>
+          <a href="{{ action('KepalaMuseum\KoleksiController@edit', $koleksi->id) }}" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Edit</a>
   		<button onclick="hapus({{ $koleksi->id }})" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Hapus</button>
   	  </td>
       </tr>
