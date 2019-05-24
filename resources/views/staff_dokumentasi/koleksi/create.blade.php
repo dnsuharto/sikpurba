@@ -5,7 +5,7 @@
 <section class="content">
 	<div class="box box-info">
 	    <div class="box-header with-border">
-	        <h3 class="box-title">Horizontal Form</h3>
+	        <h3 class="box-title">Tambah Koleksi</h3>
 	    </div>
 	    <!-- /.box-header -->
 	    <!-- form start -->
@@ -17,8 +17,40 @@
 	                <div class="col-sm-10">
 	                	<input name="no_koleksi" value="{{ old('no_koleksi') }}" class="form-control" placeholder="Masukkan No Koleksi">
 				    	@if ($errors->has('no_koleksi')) 
-					    	<div style="color: #ff0000 ">{{ $errors->first('no_koleksi') }}</div>
+					    	<div style="color: #ff0000 ">
+					    		{{ $errors->first('no_koleksi') }}
+					    	</div>
 					    @endif
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Nama Koleksi</label>
+	                <div class="col-sm-10">
+	                	<input name="nama_koleksi" value="{{ old('nama_koleksi') }}" class="form-control" placeholder="Masukkan Nama Koleksi">
+					    	@if ($errors->has('no_koleksi')) 
+						    	<div style="color: #ff0000 ">
+						    		{{ $errors->first('no_koleksi') }}
+						    	</div>
+						    @endif
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Jenis Koleksi</label>
+	                <div class="col-sm-10">
+	                	<select class="form-control" name="jenis_koleksi">
+						    <option value="batuan" @if(old('jenis_koleksi') == 'batuan') selected=true @endif>Batuan</option>
+						    <option value="fosil" @if(old('jenis_koleksi') == 'fosil') selected=true @endif>Fosil</option>
+						    <option value="lainnya" @if(old('jenis_koleksi') == 'lainnya') selected=true @endif>Lainnya</option>
+						</select>
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Asal Koleksi</label>
+	                <div class="col-sm-10">
+	                	<input name="asal_koleksi" value="{{ old('asal') }}" class="form-control" placeholder="Masukkan Asal Koleksi">
+					    	@if ($errors->has('asal_koleksi')) 
+						    	<div style="color: #ff0000 ">{{ $errors->first('asal_koleksi') }}</div>
+						    @endif
 	                </div>
 	            </div>
 	        </div>
@@ -38,35 +70,7 @@
 	   		<form enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@store') }}" method="post">
 		    	@csrf
 			  
-			  <div class="form-group">
-			    <label>No Koleksi</label>
-			    <input name="no_koleksi" value="{{ old('no_koleksi') }}" class="form-control" placeholder="Masukkan No Koleksi">
-			    	@if ($errors->has('no_koleksi')) 
-				    	<div style="color: #ff0000 ">{{ $errors->first('no_koleksi') }}</div>
-				    @endif
-			  </div>
-			  <div class="form-group">
-			    <label>Nama Koleksi</label>
-			    <input name="nama_koleksi" value="{{ old('nama_koleksi') }}" class="form-control" placeholder="Masukkan Nama Koleksi">
-			    	@if ($errors->has('nama_koleksi')) 
-				    	<div style="color: #ff0000 ">{{ $errors->first('nama_koleksi') }}</div>
-				    @endif
-			  </div>
-			  <div class="form-group">
-				  <label>Jenis Koleksi:</label>
-				  <select class="form-control" name="jenis_koleksi">
-				    <option value="batuan" @if(old('jenis_koleksi') == 'batuan') selected=true @endif>Batuan</option>
-				    <option value="fosil" @if(old('jenis_koleksi') == 'fosil') selected=true @endif>Fosil</option>
-				    <option value="lainnya" @if(old('jenis_koleksi') == 'lainnya') selected=true @endif>Lainnya</option>
-				  </select>
-			  </div>
-			  <div class="form-group">
-			    <label>Asal Koleksi</label>
-			    <input name="asal_koleksi" value="{{ old('asal') }}" class="form-control" placeholder="Masukkan Asal Koleksi">
-			    	@if ($errors->has('asal_koleksi')) 
-				    	<div style="color: #ff0000 ">{{ $errors->first('asal_koleksi') }}</div>
-				    @endif
-				</div>
+	
 			  <div class="form-group">
 			    <label>Tanggal ditemukan Koleksi</label>
 			    <input type="date" name="tgl_ditemukan" value="{{ old('tgl_ditemukan') }}" class="form-control" placeholder="Masukkan Tanggal ditemukan Koleksi">
