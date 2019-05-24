@@ -189,7 +189,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ action('StaffTu\PengunjungController@index') }}">
+                                <a href="{{ action('KepalaMuseum\PengunjungController@index') }}">
                                     <i class="fa fa-users"></i> <span>Pengunjung</span>
                                 </a>
                             </li>

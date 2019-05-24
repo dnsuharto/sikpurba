@@ -15,7 +15,7 @@
             <div class="icon">
               <i class="fa fa-hand-rock-o"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ action('StaffDokumentasi\BatuanController@index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -30,7 +30,7 @@
             <div class="icon">
               <i class="fa fa-paw"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ action('StaffDokumentasi\VertebrataController@index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -45,7 +45,7 @@
             <div class="icon">
               <i class="fa fa-cloud"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ action('StaffDokumentasi\MolluscaController@index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -60,70 +60,33 @@
             <div class="icon">
               <i class="fa fa-gear"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ action('StaffDokumentasi\ArtefakController@index') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
       </div>
-	<?php
-/*<div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-paw-outline"></i></span>
+      <div class="row">
+      	<div class="col-md-12">
+          <!-- AREA CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Area Chart</h3>
 
-            <div class="info-box-content">
-              <span class="info-box-text">Vertebrata & Hominid</span>
-              <span class="info-box-number">90<small>%</small></span>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
             </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-hand-rock-o"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Batuan & Mineral</span>
-              <span class="info-box-number">41,410</span>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="areaChart" style="height: 250px; width: 594px;" width="742" height="312"></canvas>
+              </div>
             </div>
-            <!-- /.info-box-content -->
+            <!-- /.box-body -->
           </div>
-          <!-- /.info-box -->
+          <!-- /.box -->
+
         </div>
-        <!-- /.col -->
-
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cloud-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Mollusca</span>
-              <span class="info-box-number">760</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-gear-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Artefak</span>
-              <span class="info-box-number">2,000</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
       </div>
-      */?>
 </section>
 @endsection
