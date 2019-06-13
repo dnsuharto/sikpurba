@@ -11,6 +11,7 @@
 	    <!-- form start -->
 	    <form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@store') }}" method="post">
 		    	@csrf
+		    <input type="hidden" name="jenis_koleksi" value="{{ $jenis_koleksi }}">
 	        <div class="box-body">
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">No. Koleksi</label>

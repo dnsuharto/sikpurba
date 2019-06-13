@@ -19,18 +19,18 @@ class KoleksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($jenis_koleksi)
+    public function index(Request $request)
     {
+        $jenis_koleksi = $request->input('jenis');
+
         $koleksis = Koleksi::where('jenis_koleksi', $jenis_koleksi)->paginate(10);
 
         if ($jenis_koleksi=='vertebrata')
-            return view('staff_dokumentasi.koleksi.vertebrata.index')->with('koleksis', $koleksis)->with('jenis_koleksi', $jenis_koleksi)
-        ;
+            return view('staff_dokumentasi.koleksi.vertebrata.index')->with('koleksis', $koleksis)->with('jenis_koleksi', $jenis_koleksi);
         if ($jenis_koleksi=='batuan')
             return view('staff_dokumentasi.koleksi.batuan.index')->with('koleksis', $koleksis);
         if ($jenis_koleksi=='artefak')
-            return view('staff_dokumentasi.koleksi.artefak.index')->with('koleksis', $koleksis)->with('jenis_koleksi', $jenis_koleksi)
-        ;
+            return view('staff_dokumentasi.koleksi.artefak.index')->with('koleksis', $koleksis)->with('jenis_koleksi', $jenis_koleksi);
         if ($jenis_koleksi=='mollusca')
             return view('staff_dokumentasi.koleksi.mollusca.index')->with('koleksis', $koleksis);
     }
@@ -40,9 +40,11 @@ class KoleksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('staff_dokumentasi.koleksi.create');
+        $jenis_koleksi = $request->input('jenis');
+
+        return view('staff_dokumentasi.koleksi.create')->with('jenis_koleksi', $jenis_koleksi);
     }
 
     /**
@@ -53,6 +55,7 @@ class KoleksiController extends Controller
      */
     public function store(Request $request)
     {
+        $jenis_koleksi = $request->input('jenis');
         
         $validatedData = $request->validate([
         'no_koleksi' => 'required|unique:koleksi',
