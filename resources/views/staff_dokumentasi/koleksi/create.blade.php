@@ -208,13 +208,63 @@
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Titik Lebur Batuan</label>
 	                <div class="col-sm-10">
-	                	<input name="titik_lebur" value="{{ old('titik_lebur') }}" class="form-control" placeholder="Masukkan Berat Koleksi">
+	                	<input name="titik_lebur" value="{{ old('titik_lebur') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
 			    	@if ($errors->has('titik_lebur')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('titik_lebur') }}</div>
 				    @endif
 	                </div>
 	            </div>
 	            <!-- Form Tambahan Mollusca -->
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Kelas Mollusca</label>
+	                <div class="col-sm-10">
+	                	<select class="form-control" name="kelas">
+						    <option value="aplacopora" @if(old('kelas') == 'aplacopora') selected=true @endif>Aplacopora</option>
+						    <option value="scapopoda" @if(old('kelas') == 'scapopoda') selected=true @endif>Scapopoda</option>
+						    <option value="polyplacophora" @if(old('kelas') == 'polyplacophora') selected=true @endif>Polyplacophora</option>
+						    <option value="gastropoda" @if(old('kelas') == 'gastropoda') selected=true @endif>Gastropoda</option>
+						    <option value="bivalvia" @if(old('kelas') == 'bivalvia') selected=true @endif>Bivalvia</option>
+						    <option value="cephalopoda" @if(old('kelas') == 'cephalopoda') selected=true @endif>Cephalopoda</option>
+						</select>
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Ukuran Mollusca</label>
+	                <div class="col-sm-10">
+	                	<input name="ukuran" value="{{ old('ukuran') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+			    	@if ($errors->has('ukuran')) 
+				    	<div style="color: #ff0000 ">{{ $errors->first('ukuran') }}</div>
+				    @endif
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Bentuk Mollusca</label>
+	                <div class="col-sm-10">
+	                	<input name="bentuk" value="{{ old('bentuk') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+			    	@if ($errors->has('bentuk')) 
+				    	<div style="color: #ff0000 ">{{ $errors->first('bentuk') }}</div>
+				    @endif
+	                </div>
+	            </div>
+	            <!-- Form Tambahan Artefak -->
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Zaman Koleksi</label>
+	                <div class="col-sm-10">
+	                	<input name="jaman" value="{{ old('jaman') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+			    	@if ($errors->has('jaman')) 
+				    	<div style="color: #ff0000 ">{{ $errors->first('jaman') }}</div>
+				    @endif
+	                </div>
+	            </div>
+	            <div class="form-group">
+	                <label class="col-sm-2 control-label">Bahan Dasar Koleksi</label>
+	                <div class="col-sm-10">
+	                	<input name="bahan" value="{{ old('bahan') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+			    	@if ($errors->has('bahan')) 
+				    	<div style="color: #ff0000 ">{{ $errors->first('bahan') }}</div>
+				    @endif
+	                </div>
+	            </div>
 	        </div>
 	        <!-- /.box-body -->
 	        <div class="box-footer">

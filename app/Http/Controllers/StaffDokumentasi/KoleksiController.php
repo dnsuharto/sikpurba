@@ -19,11 +19,20 @@ class KoleksiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($jenis_koleksi)
     {
-        $koleksis = Koleksi::paginate(10);
-        
-        return view('staff_dokumentasi.koleksi.index')->with('koleksis', $koleksis);
+        $koleksis = Koleksi::where('jenis_koleksi', $jenis_koleksi)->paginate(10);
+
+        if ($jenis_koleksi=='vertebrata')
+            return view('staff_dokumentasi.koleksi.vertebrata.index')->with('koleksis', $koleksis)->with('jenis_koleksi', $jenis_koleksi)
+        ;
+        if ($jenis_koleksi=='batuan')
+            return view('staff_dokumentasi.koleksi.batuan.index')->with('koleksis', $koleksis);
+        if ($jenis_koleksi=='artefak')
+            return view('staff_dokumentasi.koleksi.artefak.index')->with('koleksis', $koleksis)->with('jenis_koleksi', $jenis_koleksi)
+        ;
+        if ($jenis_koleksi=='mollusca')
+            return view('staff_dokumentasi.koleksi.mollusca.index')->with('koleksis', $koleksis);
     }
 
     /**

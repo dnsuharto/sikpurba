@@ -157,10 +157,10 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu" style="display: block;">
-                                        <li><a href="{{ action('StaffDokumentasi\VertebrataController@index') }}"><i class="fa fa-circle-o"></i>Vertebrata & Hominid</a></li>
-                                        <li><a href="{{ action('StaffDokumentasi\BatuanController@index') }}"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
-                                        <li><a href="{{ action('StaffDokumentasi\MolluscaController@index') }}"><i class="fa fa-circle-o"></i>Mollusca</a></li>
-                                        <li><a href="{{ action('StaffDokumentasi\ArtefakController@index') }}"><i class="fa fa-circle-o"></i>Artefak</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index', ['vertebrata']) }}"><i class="fa fa-circle-o"></i>Vertebrata & Hominid</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index', ['batuan']) }}"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index', ['mollusca']) }}"><i class="fa fa-circle-o"></i>Mollusca</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index', ['artefak']) }}"><i class="fa fa-circle-o"></i>Artefak</a></li>
                              </ul>
                             </li>
                             <li>
