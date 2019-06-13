@@ -17,7 +17,8 @@ class CreateKoleksiTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('gambar_koleksi');
             $table->string('no_koleksi', 30)->unique();
-            $table->string('nama_koleksi');
+            $table->string('nama_ilmiah');
+            $table->string('nama_umum');
             $table->enum('jenis_koleksi',['batuan','vertebrata','molusca','artefak']);
             $table->string('asal_koleksi');
             $table->date('tgl_ditemukan');
@@ -25,6 +26,7 @@ class CreateKoleksiTable extends Migration
             $table->string('penemu');
             $table->enum('status',['nonperaga','peraga']);
             $table->enum('status_pengajuan',['belum','sedang','telah']);
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }

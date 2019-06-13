@@ -15,7 +15,19 @@ class CreateBatuanTable extends Migration
     {
         Schema::create('batuan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('koleksi_id')->unsigned();
+            $table->decimal('tinggi');
+            $table->decimal('panjang');
+            $table->decimal('berat');
+            $table->string('warna');
+            $table->string('rumus_kimia');
+            $table->string('skala_kekerasan');
+            $table->string('titik_lebur');
             $table->timestamps();
+
+            $table->foreign('koleksi_id')
+                  ->references('id')->on('koleksi')
+                  ->onDelete('cascade');
         });
     }
 

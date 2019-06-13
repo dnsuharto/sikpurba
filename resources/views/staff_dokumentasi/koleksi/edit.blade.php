@@ -40,85 +40,111 @@ if(old('status_pengajuan')!=null){
 	$status_pengajuan = old('status_pengajuan');
 }
 ?>
-<div class="container" style="margin-top: 20px; text-align: center;">
-	<div class="card" style="width: 24rem; justify-content: center; margin: 80px auto;">
-	  <div class="card-body">
-	    <h5 class="card-title" style="text-align: center;">Edit Koleksi</h5>
-	   		<form enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@update', $koleksi->id) }}" method="post">
+<section class="content">
+<div class="box box-info">
+	<div class="box-header with-border">
+		<h3 class="box-title">Edit Koleksi</h3>
+	</div>
+	<!-- /.box-header -->
+	<!-- form start -->
+	   		<form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@update', $koleksi->id) }}" method="post">
 		    	@csrf
 			  <input type="hidden" name="_method" value="PUT">
+			  <div class="box-body">
 			  <div class="form-group">
-			    <label>No Koleksi</label>
+			    <label class="col-sm-2 control-label">No Koleksi</label>
+			    <div class="col-sm-10">
 			    <input name="no_koleksi" value="{{ $no_koleksi }}" class="form-control" placeholder="Masukkan No Koleksi">
 			    	@if ($errors->has('no_koleksi')) 
-				    	<div style="color: #ff0000 ">{{ $errors->first('no_koleksi') }}</div>
+				    	<div style="color: #ff0000 ">{{ $errors->first('no_koleksi') }}
+				    	</div>
 				    @endif
 			  </div>
+			</div>
 			  <div class="form-group">
-			    <label>Nama Koleksi</label>
+			    <label class="col-sm-2 control-label">Nama Koleksi</label>
+			    <div class="col-sm-10">
 			    <input name="nama_koleksi" value="{{ $nama_koleksi }}" class="form-control" placeholder="Masukkan Nama Koleksi">
 			    	@if ($errors->has('nama_koleksi')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('nama_koleksi') }}</div>
 				    @endif
 			  </div>
+			</div>
 			  <div class="form-group">
-				  <label>Jenis Koleksi:</label>
+				  <label class="col-sm-2 control-label">Jenis Koleksi:</label>
+				  <div class="col-sm-10">
 				  <select class="form-control" name="jenis_koleksi">
-				    <option value="batuan" @if($jenis_koleksi == 'batuan') selected=true @endif>Batuan</option>
-				    <option value="fosil" @if($jenis_koleksi == 'fosil') selected=true @endif>Fosil</option>
-				    <option value="lainnya" @if($jenis_koleksi == 'lainnya') selected=true @endif>Lainnya</option>
+				    <option value="batuan" @if($jenis_koleksi == 'batuan') selected=true @endif>Batuan & Mineral</option>
+				    <option value="vertebrata" @if($jenis_koleksi == 'vertebrata') selected=true @endif>Vertebrata & Hominid</option>
+				    <option value="mollusca" @if($jenis_koleksi == 'mollusca') selected=true @endif>Mollusca</option>
+				    <option value="artefak" @if($jenis_koleksi == 'artefak') selected=true @endif>Artefak</option>
 				  </select>
 			  </div>
+			</div>
 			  <div class="form-group">
-			    <label>Asal Koleksi</label>
+			    <label class="col-sm-2 control-label">Asal Koleksi</label>
+			    <div class="col-sm-10">
 			    <input name="asal_koleksi" value="{{ $asal_koleksi }}" class="form-control" placeholder="Masukkan Asal Koleksi">
 			    	@if ($errors->has('asal_koleksi')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('asal_koleksi') }}</div>
 				    @endif
 			  </div>
+			</div>
 			  <div class="form-group">
-			    <label>Tanggal ditemukan Koleksi</label>
+			    <label class="col-sm-2 control-label">Tanggal ditemukan Koleksi</label>
+			    <div class="col-sm-10">
 			    <input type="date" name="tgl_ditemukan" value="{{ $tgl_ditemukan }}" class="form-control" placeholder="Masukkan Tanggal ditemukan Koleksi">
 			    	@if ($errors->has('tgl_ditemukan')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('tgl_ditemukan') }}</div>
 				    @endif
 			  </div>
+			</div>
 			  <div class="form-group">
-			    <label>Usia</label>
+			    <label class="col-sm-2 control-label">Usia</label>
+			    <div class="col-sm-10">
 			    <input name="usia" value="{{ $usia }}" class="form-control" placeholder="Masukkan Usia Koleksi">
 			    	@if ($errors->has('usia')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('usia') }}</div>
 				    @endif
 			  </div>
+			</div>
 			  <div class="form-group">
-			  <label>Penemu</label>
+			  <label class="col-sm-2 control-label">Penemu</label>
+			  <div class="col-sm-10">
 			    <input name="penemu" value="{{ $penemu }}" class="form-control" placeholder="Masukkan Nama Penemu Koleksi">
 			    	@if ($errors->has('penemu')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('penemu') }}</div>
 				    @endif
 			  </div>
+			</div>
 			  <div class="form-group">
-			 	<label>Gambar Koleksi</label>
-			 	<input name="gambar_koleksi" type="file" id="gambar_koleksi" data-show-remove="false"  />
+			 	<label class="col-sm-2 control-label">Gambar Koleksi</label>
+			 	<div class="col-sm-10">
+			 	<input name="gambar_koleksi" type="file" class="dropify" data-show-remove="false"  />
 			 	@if ($errors->has('gambar_koleksi')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('gambar_koleksi') }}</div>
 				    @endif
 			 </div>
+			</div>
 			 <div class="form-group">
-				  <label>Status Koleksi:</label>
+				  <label class="col-sm-2 control-label">Status Koleksi:</label>
+				  <div class="col-sm-10">
 				  <select class="form-control" name="status">
 				    <option value="nonperaga" @if($status == 'nonperaga') selected=true @endif>Nonperaga</option>
 				    <option value="peraga" @if($status == 'peraga') selected=true @endif>Peraga</option>
 				  </select>
 			  </div>
+			</div>
 			   <div class="form-group">
-				  <label>Status Pengajuan:</label>
+				  <label class="col-sm-2 control-label">Status Pengajuan:</label>
+				  <div class="col-sm-10">
 				  <select class="form-control" name="status_pengajuan">
 				    <option value="belum" @if($status_pengajuan == 'belum') selected=true @endif>BELUM DIAJUKAN</option>
 				    <option value="sedang" @if($status_pengajuan == 'sedang') selected=true @endif>SEDANG DIAJUKAN</option>
 				    <option value="telah" @if($status_pengajuan == 'telah') selected=true @endif>TELAH DISETUJUI</option>
 				  </select>
 			  </div>
+			</div>
 			  <div style="text-align: center;">
 				  <button type="submit" class="btn btn-primary">Simpan</button>
 			  </div>
@@ -130,7 +156,7 @@ if(old('status_pengajuan')!=null){
 
 @section('script')
 <script type="text/javascript">
-	$('#gambar_koleksi').dropify({
+	$('.dropify').dropify({
     messages: {
         'remove':  'Remove',
     }

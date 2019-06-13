@@ -5,6 +5,10 @@ namespace App\Http\Controllers\StaffDokumentasi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Koleksi;
+use App\Mollusca;
+use App\Batuan;
+use App\Vertebrata;
+use App\Artefak;
 use Image;
 use Storage;
 
@@ -46,7 +50,6 @@ class KoleksiController extends Controller
         'nama_koleksi' => 'required',
         'asal_koleksi' => 'required',
         'tgl_ditemukan' => 'required|before:tomorrow',
-        'usia' => 'required',
         'gambar_koleksi' =>'required' ,
         'penemu' =>'required|alpha'
         ],
@@ -57,7 +60,6 @@ class KoleksiController extends Controller
         'asal_koleksi.required' => 'Asal tidak boleh kosong',
         'tgl_ditemukan.required' => 'Tanggal tidak boleh kosong',
         'tgl_ditemukan.before' => 'Tanggal tidak boleh lebih dari hari ini',
-        'usia.required' => 'usia tidak boleh kosong',
         'penemu.required' => 'penemu tidak boleh kosong',
         'penemu.alpha' => 'Nama penemu harus alphabet',
         'gambar_koleksi.required' => 'Gambar tidak boleh kosong',
@@ -71,6 +73,9 @@ class KoleksiController extends Controller
         $koleksi -> tgl_ditemukan = $request->input('tgl_ditemukan');
         $koleksi -> usia = $request->input('usia');
         $koleksi -> penemu = $request->input('penemu');
+        $koleksi -> status = 'nonperaga';
+        $koleksi -> status_pengajuan = 'belum';
+        $koleksi -> deskripsi = $request-> input('deskripsi');
 
         $filename ='koleksi_'.time().rand(1000,9999).'.jpg';
 
@@ -80,8 +85,6 @@ class KoleksiController extends Controller
 
         $koleksi-> gambar_koleksi = $filename;
 
-        $koleksi -> status = $request->input('status');
-        $koleksi -> status_pengajuan = $request->input('status_pengajuan');
         $koleksi -> save();
 
          return redirect()->action('StaffDokumentasi\KoleksiController@index')->with('msg', 'Data berhasil ditambahkan');
@@ -127,7 +130,6 @@ class KoleksiController extends Controller
         'nama_koleksi' => 'required',
         'asal_koleksi' => 'required',
         'tgl_ditemukan' => 'required|before:tomorrow',
-        'usia' => 'required',
         'gambar_koleksi' =>'required' ,
         'penemu' =>'required'
         ],
@@ -137,7 +139,6 @@ class KoleksiController extends Controller
         'asal_koleksi.required' => 'Asal tidak boleh kosong',
         'tgl_ditemukan.required' => 'Tanggal tidak boleh kosong',
         'tgl_ditemukan.before' => 'Tanggal tidak boleh lebih dari hari ini',
-        'usia.required' => 'usia tidak boleh kosong',
         'penemu.required' => 'penemu tidak boleh kosong',
         'gambar_koleksi.required' => 'Gambar tidak boleh kosong',
         ]);

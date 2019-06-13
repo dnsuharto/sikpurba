@@ -236,6 +236,9 @@
         </script>
 
         <script type="text/javascript" src="{{ asset('js/dropify.js') }}"></script>
+        @section('script')
+
+        @show
 
     </body>
 </html>

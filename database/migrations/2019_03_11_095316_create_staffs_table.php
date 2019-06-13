@@ -20,7 +20,6 @@ class CreateStaffsTable extends Migration
             $table->string('email',100)->unique();
             $table->enum('role', ['kepala_museum', 'staff_peragaan', 'staff_dokumentasi', 'staff_tu']);
             $table->string('password');
-            $table->rememberToken();
             $table->timestamps();
         });
     }

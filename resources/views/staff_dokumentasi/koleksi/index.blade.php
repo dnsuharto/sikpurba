@@ -27,7 +27,7 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">No Koleksi</th>
-        <th width="80"></th>
+        <th width="80">Gambar</th>
         <th scope="col">Nama Koleksi</th>
         <th scope="col">Jenis Koleksi</th>
         <th scope="col">Asal Koleksi</th>
@@ -52,8 +52,8 @@
           @if($koleksi->jenis_koleksi=='vertebrata')
           <div>Vertebrata & Hominid</div>
           @endif
-          @if($koleksi->jenis_koleksi=='molusca')
-          <div>Molusca</div>
+          @if($koleksi->jenis_koleksi=='mollusca')
+          <div>Mollusca</div>
           @endif
           @if($koleksi->jenis_koleksi=='artefak')
           <div>Artefak</div>
@@ -121,8 +121,7 @@
         </form>
       </div>
     </div>
-  </div>
-  @endsection
+  </div>  @endsection
   @section('script')
   <script type="text/javascript">
     function hapus(id) {

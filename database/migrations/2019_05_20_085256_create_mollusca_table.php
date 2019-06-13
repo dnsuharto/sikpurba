@@ -15,10 +15,15 @@ class CreateMolluscaTable extends Migration
     {
         Schema::create('mollusca', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('koleksi_id')->unsigned();
+            $table->integer('koleksi_id')->unsigned(); 
+            $table->enum('kelas',['aplacopora','scapopoda', 'polyplacophora', 'gastropoda','bivalvia','cephalopoda']);
             $table->decimal('ukuran');
             $table->string('bentuk');
             $table->timestamps();
+
+            $table->foreign('koleksi_id')
+                  ->references('id')->on('koleksi')
+                  ->onDelete('cascade');
         });
     }
 

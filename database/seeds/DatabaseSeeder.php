@@ -67,7 +67,7 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi = new Koleksi;
 	       	$koleksi->gambar_koleksi = '';
 	       	$koleksi->no_koleksi = 'A123';
-	       	$koleksi->nama_koleksi = 'Batu Kecubung';
+	       	$koleksi->nama_ilmiah = 'Batu Kecubung';
 	       	$koleksi->jenis_koleksi = 'batuan';
 	       	$koleksi->asal_koleksi = 'Pangkalan Bun';
 	       	$koleksi->tgl_ditemukan = '2018-05-24';
@@ -75,12 +75,13 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi->penemu = 'Tim Geologi';
 	       	$koleksi->status = 'nonperaga';
 	       	$koleksi-> status_pengajuan = 'sedang';
+	       	$koleksi->deskripsi ='Merupakan batuan yang banyak ditemukan di daerah kalimantan';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi-> gambar_koleksi = '';
 	       	$koleksi-> no_koleksi = 'B123';
-	       	$koleksi-> nama_koleksi = 'Tulang Belikat Homosafiens';
+	       	$koleksi-> nama_ilmiah = 'Tulang Belikat Homosafiens';
 	       	$koleksi-> jenis_koleksi = 'vertebrata';
 	       	$koleksi-> asal_koleksi = 'Ujungpandang';
 	       	$koleksi-> tgl_ditemukan = '2012-03-10';
@@ -88,18 +89,20 @@ class DatabaseSeeder extends Seeder
 	       	$koleksi-> penemu = 'Noval';
 	       	$koleksi-> status = 'peraga';
 	       	$koleksi-> status_pengajuan = 'telah';
+	       	$koleksi-> deskripsi = '';
 	       	$koleksi -> save();
 
 	       	$koleksi = new Koleksi;
 	       	$koleksi-> gambar_koleksi = '';
 	       	$koleksi-> no_koleksi = 'C123';
-	       	$koleksi-> nama_koleksi = 'Etanol';
+	       	$koleksi-> nama_ilmiah = 'Etanol';
 	       	$koleksi-> jenis_koleksi = 'batuan';
 	       	$koleksi-> asal_koleksi = 'Palembang';
 	       	$koleksi-> tgl_ditemukan = '2010-12-03';
 	       	$koleksi-> penemu = 'Noval';
 	       	$koleksi-> status = 'nonperaga';
             $koleksi-> status_pengajuan = 'belum';
+            $koleksi-> deskripsi = '';
 	       	$koleksi -> save();
 
 

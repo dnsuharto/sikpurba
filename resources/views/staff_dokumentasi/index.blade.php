@@ -7,8 +7,8 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>{{ number_format($jumlah_total_koleksi, 0, '.', ',') }}</h3>
-                    <p>Total Koleksi</p>
+                    <h3>{{ number_format($jumlah_batuan, 0, '.', ',') }}</h3>
+                    <p>Batuan & Mineral</p>
                 </div>
                 <div class="icon">
                     <i class="fa fa-hand-rock-o"></i>
@@ -35,7 +35,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>44</h3>
+                    <h3>{{ number_format($jumlah_mollusca, 0, '.', ',') }}</h3>
                     <p>Mollusca</p>
                 </div>
                 <div class="icon">
@@ -49,7 +49,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>65</h3>
+                    <h3>{{ number_format($jumlah_artefak, 0, '.', ',') }}</h3>
                     <p>Artefak</p>
                 </div>
                 <div class="icon">

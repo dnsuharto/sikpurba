@@ -15,7 +15,14 @@ class CreateArtefakTable extends Migration
     {
         Schema::create('artefak', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('koleksi_id')->unsigned();
+            $table->string('jaman');
+            $table->string('bahan');
             $table->timestamps();
+
+            $table->foreign('koleksi_id')
+                  ->references('id')->on('koleksi')
+                  ->onDelete('cascade');
         });
     }
 
