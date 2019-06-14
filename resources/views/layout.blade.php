@@ -1,4 +1,4 @@
-..<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -157,10 +157,10 @@
                                     </span>
                                 </a>
                                 <ul class="treeview-menu" style="display: block;">
-                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis=vertebrata"><i class="fa fa-circle-o"></i>Vertebrata & Hominid</a></li>
-                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis=batuan"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
-                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis=mollusca"><i class="fa fa-circle-o"></i>Mollusca</a></li>
-                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis=artefak"><i class="fa fa-circle-o"></i>Artefak</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=vertebrata"><i class="fa fa-circle-o"></i>Vertebrata & Hominid</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=batuan"><i class="fa fa-circle-o"></i>Batuan & Mineral</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=mollusca"><i class="fa fa-circle-o"></i>Mollusca</a></li>
+                                        <li><a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=artefak"><i class="fa fa-circle-o"></i>Artefak</a></li>
                              </ul>
                             </li>
                             <li>

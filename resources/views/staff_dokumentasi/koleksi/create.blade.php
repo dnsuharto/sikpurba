@@ -9,10 +9,16 @@
 	    </div>
 	    <!-- /.box-header -->
 	    <!-- form start -->
-	    <form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@store') }}" method="post">
+	    <form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@store')}}?jenis={{ $jenis_koleksi }}" method="post">
 		    	@csrf
 		    <input type="hidden" name="jenis_koleksi" value="{{ $jenis_koleksi }}">
 	        <div class="box-body">
+	        	<div class="form-group">
+	                <label class="col-sm-2 control-label">Jenis Koleksi</label>
+	                <div class="col-sm-10">
+	                	<input type="text" name="jenis_koleksi" class="form-control" value="{{ ucwords(str_replace("_", " ",$jenis_koleksi)) }}" disabled="true">
+	                </div>
+	            </div>
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">No. Koleksi</label>
 	                <div class="col-sm-10">
@@ -46,17 +52,7 @@
 						    @endif
 	                </div>
 	            </div>
-	            <div class="form-group">
-	                <label class="col-sm-2 control-label">Jenis Koleksi</label>
-	                <div class="col-sm-10">
-	                	<select class="form-control" name="jenis_koleksi">
-						    <option value="batuan" @if(old('jenis_koleksi') == 'batuan') selected=true @endif>Batuan & Mineral</option>
-						    <option value="vertebrata" @if(old('jenis_koleksi') == 'vertebrata') selected=true @endif>Vertebrata & Hominid</option>
-						    <option value="mollusca" @if(old('jenis_koleksi') == 'mollusca') selected=true @endif>Mollusca</option>
-						    <option value="artefak" @if(old('jenis_koleksi') == 'artefak') selected=true @endif>Artefak</option>
-						</select>
-	                </div>
-	            </div>
+	            
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Asal Koleksi</label>
 	                <div class="col-sm-10">
@@ -114,6 +110,7 @@
 	                </div>
 	            </div>
 
+	            @if($jenis_koleksi=='vertebrata')
 	            <!-- Form Tambahan Vertebrata-->
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Spesies Vertebrata</label>
@@ -151,6 +148,8 @@
 				    @endif
 	                </div>
 	            </div>
+	            @endif
+	            @if($jenis_koleksi=='batuan')
 	            <!-- Form Tambahan Batuan -->
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Tinggi Koleksi</label>
@@ -215,6 +214,8 @@
 				    @endif
 	                </div>
 	            </div>
+	            @endif
+	            @if($jenis_koleksi=='mollusca')
 	            <!-- Form Tambahan Mollusca -->
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Kelas Mollusca</label>
@@ -247,6 +248,8 @@
 				    @endif
 	                </div>
 	            </div>
+	            @endif
+	            @if($jenis_koleksi=='artefak')
 	            <!-- Form Tambahan Artefak -->
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Zaman Koleksi</label>
@@ -266,7 +269,9 @@
 				    @endif
 	                </div>
 	            </div>
+	            @endif
 	        </div>
+
 	        <!-- /.box-body -->
 	        <div class="box-footer">
 	            <button type="submit" class="btn btn-info pull-right">Tambah Koleksi</button>

@@ -33,7 +33,7 @@ Route::group(['prefix' => 'staff_dokumentasi'], function(){
 
 	Route::resource('/pengajuan', 'StaffDokumentasi\PengajuanController');
 
-	Route::resource('/koleksi/', 'StaffDokumentasi\KoleksiController');
+	Route::resource('/koleksi', 'StaffDokumentasi\KoleksiController');
 
 });
 
