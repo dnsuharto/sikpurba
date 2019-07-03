@@ -10,6 +10,6 @@ class Artefak extends Model
 
     public function koleksi()
     {
-        return $this->belongsTo('App\Koleksi');
+        return $this->belongsTo('App\Koleksi', 'koleksi_id', 'id');
     }
 }

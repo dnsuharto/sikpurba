@@ -3,42 +3,54 @@
 @section('body')
 <?php
 
-$no_koleksi= $koleksi->no_koleksi;
-if(old('no_koleksi')!=null){
-	$no_koleksi = old('no_koleksi');
-}
-$nama_koleksi= $koleksi->nama_koleksi;
-if(old('nama_koleksi')!=null){
-	$nama_koleksi = old('nama_koleksi');
-}
-$asal_koleksi= $koleksi->asal_koleksi;
-if(old('asal_koleksi')!=null){
-	$asal_koleksi = old('asal_koleksi');
-}
-$jenis_koleksi= $koleksi->jenis_koleksi;
-if(old('jenis_koleksi')!=null){
-	$jenis_koleksi = old('jenis_koleksi');
-}
-$tgl_ditemukan= $koleksi->tgl_ditemukan;
-if(old('tgl_koleksi')!=null){
-	$tgl_koleksi = old('tgl_koleksi');
-}
-$usia= $koleksi->usia;
-if(old('usia')!=null){
-	$usia = old('usia');
-}
-$penemu= $koleksi->penemu;
-if(old('penemu')!=null){
-	$penemu = old('penemu');
-}
-$status= $koleksi->status;
-if(old('status')!=null){
-	$status = old('status');
-}
-$status_pengajuan= $koleksi->status_pengajuan;
-if(old('status_pengajuan')!=null){
-	$status_pengajuan = old('status_pengajuan');
-}
+	$no_koleksi = $koleksi->no_koleksi;
+	if(old('no_koleksi')!=null){
+		$no_koleksi = old('no_koleksi');
+	}
+	$nama_ilmiah= $koleksi->nama_ilmiah;
+	if(old('nama_ilmiah')!=null){
+		$nama_ilmiah = old('nama_ilmiah');
+	}
+	$nama_umum= $koleksi->nama_umum;
+	if(old('nama_umum')!=null){
+		$nama_umum = old('nama_umum');
+	}
+	$asal_koleksi= $koleksi->asal_koleksi;
+	if(old('asal_koleksi')!=null){
+		$asal_koleksi = old('asal_koleksi');
+	}
+	$jenis_koleksi= $koleksi->jenis_koleksi;
+	if(old('jenis_koleksi')!=null){
+		$jenis_koleksi = old('jenis_koleksi');
+	}
+	$tgl_ditemukan= $koleksi->tgl_ditemukan;
+	if(old('tgl_koleksi')!=null){
+		$tgl_koleksi = old('tgl_koleksi');
+	}
+	$usia= $koleksi->usia;
+	if(old('usia')!=null){
+		$usia = old('usia');
+	}
+	$penemu= $koleksi->penemu;
+	if(old('penemu')!=null){
+		$penemu = old('penemu');
+	}
+	$status= $koleksi->status;
+	if(old('status')!=null){
+		$status = old('status');
+	}
+	$status_pengajuan= $koleksi->status_pengajuan;
+	if(old('status_pengajuan')!=null){
+		$status_pengajuan = old('status_pengajuan');
+	}
+	$koleksi = $koleksi->artefak->jaman;
+	if(old('$koleksi->artefak->jaman')!=null){
+		$jaman = old('$koleksi->artefak->jaman');
+	}
+	$bahan = $koleksi ->bahan;
+	if(old('bahan')!=null){
+		$bahan = old('bahan');
+	}
 ?>
 <section class="content">
 <div class="box box-info">
@@ -47,9 +59,10 @@ if(old('status_pengajuan')!=null){
 	</div>
 	<!-- /.box-header -->
 	<!-- form start -->
-	   		<form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@update', $koleksi->id) }}" method="post">
+	   		<form class="form-horizontal" enctype="multipart/form-data" style="text-align: left;" action="{{ action('StaffDokumentasi\KoleksiController@update', $koleksi->id) }}?jenis={{ $jenis_koleksi }}" method="post">
 		    	@csrf
 			  <input type="hidden" name="_method" value="PUT">
+			  <input type="hidden" name="jenis_koleksi" value="{{ $jenis_koleksi }}">
 			  <div class="box-body">
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">No Koleksi</label>
@@ -61,14 +74,25 @@ if(old('status_pengajuan')!=null){
 				    @endif
 			  </div>
 			</div>
-			  <div class="form-group">
-			    <label class="col-sm-2 control-label">Nama Koleksi</label>
+			<div class="form-group">
+			    <label class="col-sm-2 control-label">Nama Ilmiah</label>
 			    <div class="col-sm-10">
-			    <input name="nama_koleksi" value="{{ $nama_koleksi }}" class="form-control" placeholder="Masukkan Nama Koleksi">
-			    	@if ($errors->has('nama_koleksi')) 
-				    	<div style="color: #ff0000 ">{{ $errors->first('nama_koleksi') }}</div>
+			    <input name="nama_ilmiah" value="{{ $nama_ilmiah }}" class="form-control" placeholder="Masukkan Nama Koleksi">
+			    	@if ($errors->has('nama_ilmiah')) 
+				    <div style="color: #ff0000 ">{{ $errors->first('nama_ilmiah') }}
+				    </div>
 				    @endif
-			  </div>
+			 	</div>
+			</div>
+			<div class="form-group">
+			    <label class="col-sm-2 control-label">Nama Umum</label>
+			    <div class="col-sm-10">
+			    <input name="nama_umum" value="{{ $nama_umum }}" class="form-control" placeholder="Masukkan Nama Koleksi">
+			    	@if ($errors->has('nama_umum')) 
+				    <div style="color: #ff0000 ">{{ $errors->first('nama_umum') }}
+				    </div>
+				    @endif
+			 	</div>
 			</div>
 			  <div class="form-group">
 				  <label class="col-sm-2 control-label">Jenis Koleksi:</label>
@@ -291,7 +315,7 @@ if(old('status_pengajuan')!=null){
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Zaman Koleksi</label>
 	                <div class="col-sm-10">
-	                	<input name="jaman" value="{{ old('jaman') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+	                	<input name="jaman" value="{{ old('$koleksi->artefak->jaman') }}" class="form-control" placeholder="Masukkan Zaman">
 			    	@if ($errors->has('jaman')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('jaman') }}</div>
 				    @endif
@@ -300,7 +324,7 @@ if(old('status_pengajuan')!=null){
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Bahan Dasar Koleksi</label>
 	                <div class="col-sm-10">
-	                	<input name="bahan" value="{{ old('bahan') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+	                	<input name="bahan" value="{{ old('bahan') }}" class="form-control" placeholder="Masukkan Bahan Dasar Koleksi">
 			    	@if ($errors->has('bahan')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('bahan') }}</div>
 				    @endif

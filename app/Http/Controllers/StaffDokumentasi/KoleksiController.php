@@ -261,7 +261,7 @@ class KoleksiController extends Controller
     {
         $koleksi = Koleksi::find($id);
 
-        return view('staff_dokumentasi.koleksi.show')->with('koleksi', $koleksi);
+        return view('staff_dokumentasi.koleksi.show')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
     }
 
     /**
@@ -272,9 +272,12 @@ class KoleksiController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $koleksi = Koleksi::find($id);
         $jenis_koleksi = $request->input('jenis_koleksi');
-        return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi);
+
+        if ($jenis_koleksi=='artefak'){
+         $koleksi = Koleksi::with('artefak')->find($id);
+        return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
+        }
     }
 
     /**

@@ -20,6 +20,7 @@ class CreateVertebrataTable extends Migration
             $table->decimal('tinggi');
             $table->decimal('panjang');
             $table->decimal('berat');
+            
             $table->timestamps();
 
             $table->foreign('koleksi_id')
