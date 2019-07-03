@@ -19,7 +19,7 @@ class CreateKoleksiTable extends Migration
             $table->string('no_koleksi', 30)->unique();
             $table->string('nama_ilmiah');
             $table->string('nama_umum');
-            $table->enum('jenis_koleksi',['batuan','vertebrata','molusca','artefak']);
+            $table->enum('jenis_koleksi',['batuan','vertebrata','mollusca','artefak']);
             $table->string('asal_koleksi');
             $table->date('tgl_ditemukan');
             $table->integer('usia')->nullable();

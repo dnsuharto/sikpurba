@@ -43,11 +43,11 @@
 	if(old('status_pengajuan')!=null){
 		$status_pengajuan = old('status_pengajuan');
 	}
-	$koleksi = $koleksi->artefak->jaman;
+	$jaman = $koleksi->artefak->jaman;
 	if(old('$koleksi->artefak->jaman')!=null){
 		$jaman = old('$koleksi->artefak->jaman');
 	}
-	$bahan = $koleksi ->bahan;
+	$bahan = $koleksi->artefak->bahan;
 	if(old('bahan')!=null){
 		$bahan = old('bahan');
 	}

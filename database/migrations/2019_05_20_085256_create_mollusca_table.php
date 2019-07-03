@@ -17,7 +17,7 @@ class CreateMolluscaTable extends Migration
             $table->bigIncrements('id');
             $table->integer('koleksi_id')->unsigned(); 
             $table->enum('kelas',['aplacopora','scapopoda', 'polyplacophora', 'gastropoda','bivalvia','cephalopoda']);
-            $table->decimal('ukuran');
+            $table->string('ukuran');
             $table->string('bentuk');
             $table->timestamps();
 

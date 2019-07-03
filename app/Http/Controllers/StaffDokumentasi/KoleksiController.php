@@ -261,7 +261,7 @@ class KoleksiController extends Controller
     {
         $koleksi = Koleksi::find($id);
 
-        return view('staff_dokumentasi.koleksi.show')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
+        return view('staff_dokumentasi.koleksi.show')->with('koleksi', $koleksi)->with('jenis_koleksi', $koleksi -> jenis_koleksi);
     }
 
     /**
