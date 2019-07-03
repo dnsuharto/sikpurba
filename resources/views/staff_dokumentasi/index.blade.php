@@ -13,7 +13,7 @@
                 <div class="icon">
                     <i class="fa fa-hand-rock-o"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=batuan" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -27,7 +27,7 @@
                 <div class="icon">
                     <i class="fa fa-paw"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=vertebrata" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -41,7 +41,7 @@
                 <div class="icon">
                     <i class="fa fa-cloud"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=mollusca" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -55,7 +55,7 @@
                 <div class="icon">
                     <i class="fa fa-gear"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="{{ action('StaffDokumentasi\KoleksiController@index') }}?jenis_koleksi=artefak" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
