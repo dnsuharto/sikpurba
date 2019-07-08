@@ -278,6 +278,18 @@ class KoleksiController extends Controller
          $koleksi = Koleksi::with('artefak')->find($id);
         return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
         }
+        if ($jenis_koleksi=='batuan'){
+         $koleksi = Koleksi::with('batuan')->find($id);
+        return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
+        }
+        if ($jenis_koleksi=='vertebrata'){
+         $koleksi = Koleksi::with('vertebrata')->find($id);
+        return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
+        }
+        if ($jenis_koleksi=='mollusca'){
+         $koleksi = Koleksi::with('mollusca')->find($id);
+        return view('staff_dokumentasi.koleksi.edit')->with('koleksi', $koleksi)->with('jenis_koleksi', $jenis_koleksi);
+        }
     }
 
     /**

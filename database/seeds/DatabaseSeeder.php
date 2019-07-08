@@ -62,6 +62,30 @@ class DatabaseSeeder extends Seeder
 	       	$staff -> password = bcrypt('12345');
 	       	$staff -> save();
 	       	
-
+	       	/*data koleksi*/
+	       	/*
+	       	$koleksi = new Koleksi;
+	       	$koleksi -> no_koleksi = 'A123';
+	       	$koleksi -> nama_ilmiah = 'Nama Ilmiah 1';
+	       	$koleksi -> nama_umum	= 'Nama Umum 1';
+	       	$koleksi -> jenis_koleksi = 'batuan';
+	       	$koleksi -> asal_koleksi = 'Bandung';
+	       	$koleksi -> tgl_ditemukan = '02-02-2019';
+	       	$koleksi -> usia = '245';
+	       	$koleksi -> status = 'nonperaga';
+	       	$koleksi -> status_pengajuan = 'belum';
+	       	$koleksi -> deskripsi = 'deskripsi benda koleksi purbakala';
+	       	$koleksi -> save();
+	       	$batuan = new Batuan;
+	       	$batuan -> koleksi_id = $koleksi -> id ;
+	       	$batuan -> tinggi = '25 mm';
+	       	$batuan -> panjang = '10 mm';
+	       	$batuan -> berat = '30 mg';
+	       	$batuan -> warna ='violet';
+	       	$batuan -> rumus_kimiea = 'H2SO4';
+	       	$batuan -> skala_kekerasan = '3';
+	       	$batuan -> titik_lebur = '200 derajat C';
+	       	$batuan -> save;
+	       	*/
     }
 }

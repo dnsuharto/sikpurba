@@ -141,7 +141,7 @@
                             </li>
                             @endif
 
-                            <!-- STAFF DOKUMEN-->
+                            <!-- STAFF DOKUMENTASI-->
                             @if($staff->role == 'staff_dokumentasi')
                             <li>
                                 <a href="{{ action('StaffDokumentasi\DashboardController@index') }}">

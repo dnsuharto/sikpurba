@@ -233,7 +233,7 @@
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Ukuran Mollusca</label>
 	                <div class="col-sm-10">
-	                	<input name="ukuran" value="{{ old('ukuran') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+	                	<input name="ukuran" value="{{ old('ukuran') }}" class="form-control" placeholder="Masukkan Ukuran Mollusca">
 			    	@if ($errors->has('ukuran')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('ukuran') }}</div>
 				    @endif
@@ -242,7 +242,7 @@
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Bentuk Mollusca</label>
 	                <div class="col-sm-10">
-	                	<input name="bentuk" value="{{ old('bentuk') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+	                	<input name="bentuk" value="{{ old('bentuk') }}" class="form-control" placeholder="Masukkan Bentuk Mollusca">
 			    	@if ($errors->has('bentuk')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('bentuk') }}</div>
 				    @endif
@@ -254,7 +254,7 @@
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Zaman Koleksi</label>
 	                <div class="col-sm-10">
-	                	<input name="jaman" value="{{ old('jaman') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+	                	<input name="jaman" value="{{ old('jaman') }}" class="form-control" placeholder="Masukkan Zaman Koleksi">
 			    	@if ($errors->has('jaman')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('jaman') }}</div>
 				    @endif
@@ -263,7 +263,7 @@
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Bahan Dasar Koleksi</label>
 	                <div class="col-sm-10">
-	                	<input name="bahan" value="{{ old('bahan') }}" class="form-control" placeholder="Masukkan Titik Lebur Batuan">
+	                	<input name="bahan" value="{{ old('bahan') }}" class="form-control" placeholder="Masukkan Bahan Dasar Koleksi">
 			    	@if ($errors->has('bahan')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('bahan') }}</div>
 				    @endif

@@ -17,9 +17,9 @@ class CreateVertebrataTable extends Migration
             $table->bigIncrements('id');
             $table->integer('koleksi_id')->unsigned();
             $table->string('spesies');
-            $table->decimal('tinggi');
-            $table->decimal('panjang');
-            $table->decimal('berat');
+            $table->string('tinggi');
+            $table->string('panjang');
+            $table->string('berat');
             
             $table->timestamps();
 

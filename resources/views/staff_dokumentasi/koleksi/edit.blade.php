@@ -35,6 +35,10 @@
 	if(old('penemu')!=null){
 		$penemu = old('penemu');
 	}
+	$deskripsi= $koleksi->deskripsi;
+	if(old('deskripsi')!=null){
+		$deskripsi = old('deskripsi');
+	}
 	$status= $koleksi->status;
 	if(old('status')!=null){
 		$status = old('status');
@@ -43,13 +47,86 @@
 	if(old('status_pengajuan')!=null){
 		$status_pengajuan = old('status_pengajuan');
 	}
-	$jaman = $koleksi->artefak->jaman;
-	if(old('$koleksi->artefak->jaman')!=null){
-		$jaman = old('$koleksi->artefak->jaman');
+	// Cek Masing-masing jeniss 
+	// ARTEFAK 
+	if ($jenis_koleksi == 'artefak') {
+	
+		$jaman = $koleksi->artefak->jaman;
+		if(old('jaman')!=null){
+			$jaman = old('jaman');
+		}
+		$bahan = $koleksi->artefak->bahan;
+		if(old('bahan')!=null){
+			$bahan = old('bahan');
+		}
 	}
-	$bahan = $koleksi->artefak->bahan;
-	if(old('bahan')!=null){
-		$bahan = old('bahan');
+	// MOLLUSCA
+	if ($jenis_koleksi == 'mollusca') {
+	
+		$kelas = $koleksi->mollusca->kelas;
+		if(old('kelas')!=null){
+			$kelas = old('kelas');
+		}
+		$ukuran = $koleksi->mollusca->ukuran;
+		if(old('ukuran')!=null){
+			$ukuran = old('ukuran');
+		}
+		$bentuk = $koleksi->mollusca->bentuk;
+		if(old('bentuk')!=null){
+			$bentuk = old('bentuk');
+		}
+	}
+	// VERTEBRATA
+	if ($jenis_koleksi == 'vertebrata') {
+	
+		$spesies = $koleksi->vertebrata->spesies;
+		if(old('spesies')!=null){
+			$spesies = old('spesies');
+		}
+		$tinggi = $koleksi->vertebrata->tinggi;
+		if(old('tinggi')!=null){
+			$tinggi = old('tinggi');
+		}
+		$panjang = $koleksi->vertebrata->panjang;
+		if(old('panjang')!=null){
+			$panjang = old('panjang');
+		}
+		$berat = $koleksi->vertebrata->berat;
+		if(old('berat')!=null){
+			$berat = old('berat');
+		}
+	}
+	// BATUAN
+	if ($jenis_koleksi == 'batuan') {
+	
+		$tinggi = $koleksi->batuan->tinggi;
+		if(old('tinggi')!=null){
+			$tinggi = old('tinggi');
+		}
+		$panjang = $koleksi->batuan->panjang;
+		if(old('panjang')!=null){
+			$panjang = old('panjang');
+		}
+		$berat = $koleksi->batuan->berat;
+		if(old('berat')!=null){
+			$berat = old('berat');
+		}
+		$warna = $koleksi->batuan->warna;
+		if(old('warna')!=null){
+			$warna = old('warna');
+		}
+		$rumus_kimia = $koleksi->batuan->rumus_kimia;
+		if(old('rumus_kimia')!=null){
+			$rumus_kimia = old('rumus_kimia');
+		}
+		$skala_kekerasan = $koleksi->batuan->skala_kekerasan;
+		if(old('skala_kekerasan')!=null){
+			$skala_kekerasan = old('skala_kekerasan');
+		}
+		$titik_lebur = $koleksi->batuan->titik_lebur;
+		if(old('titik_lebur')!=null){
+			$titik_lebur = old('titik_lebur');
+		}
 	}
 ?>
 <section class="content">
@@ -114,7 +191,7 @@
 				    @endif
 			  </div>
 			</div>
-			  <div class="form-group">
+			<div class="form-group">
 			    <label class="col-sm-2 control-label">Tanggal ditemukan Koleksi</label>
 			    <div class="col-sm-10">
 			    <input type="date" name="tgl_ditemukan" value="{{ $tgl_ditemukan }}" class="form-control" placeholder="Masukkan Tanggal ditemukan Koleksi">
@@ -123,7 +200,7 @@
 				    @endif
 			  </div>
 			</div>
-			  <div class="form-group">
+			<div class="form-group">
 			    <label class="col-sm-2 control-label">Usia</label>
 			    <div class="col-sm-10">
 			    <input name="usia" value="{{ $usia }}" class="form-control" placeholder="Masukkan Usia Koleksi">
@@ -132,7 +209,7 @@
 				    @endif
 			  </div>
 			</div>
-			  <div class="form-group">
+			<div class="form-group">
 			  <label class="col-sm-2 control-label">Penemu</label>
 			  <div class="col-sm-10">
 			    <input name="penemu" value="{{ $penemu }}" class="form-control" placeholder="Masukkan Nama Penemu Koleksi">
@@ -141,7 +218,7 @@
 				    @endif
 			  </div>
 			</div>
-			  <div class="form-group">
+			<div class="form-group">
 			 	<label class="col-sm-2 control-label">Gambar Koleksi</label>
 			 	<div class="col-sm-10">
 			 	<input name="gambar_koleksi" type="file" class="dropify" 
@@ -150,9 +227,18 @@
 			 	@if ($errors->has('gambar_koleksi')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('gambar_koleksi') }}</div>
 				    @endif
-			 </div>
+			 	</div>
 			</div>
-			 <div class="form-group">
+			<div class="form-group">
+			    <label class="col-sm-2 control-label">Deskripsi</label>
+			    <div class="col-sm-10">
+			    <input name="deskripsi" value="{{ $deskripsi }}" class="form-control" placeholder="Masukkan Deskripsi Koleksi">
+			    	@if ($errors->has('deskripsi')) 
+				    	<div style="color: #ff0000 ">{{ $errors->first('deskripsi') }}</div>
+				    @endif
+			  </div>
+			</div>
+			<div class="form-group">
 				  <label class="col-sm-2 control-label">Status Koleksi:</label>
 				  <div class="col-sm-10">
 				  <select class="form-control" name="status">
@@ -315,7 +401,7 @@
 	            <div class="form-group">
 	                <label class="col-sm-2 control-label">Zaman Koleksi</label>
 	                <div class="col-sm-10">
-	                	<input name="jaman" value="{{ old('$koleksi->artefak->jaman') }}" class="form-control" placeholder="Masukkan Zaman">
+	                	<input name="jaman" value="{{ old('jaman') }}" class="form-control" placeholder="Masukkan Zaman">
 			    	@if ($errors->has('jaman')) 
 				    	<div style="color: #ff0000 ">{{ $errors->first('jaman') }}</div>
 				    @endif
