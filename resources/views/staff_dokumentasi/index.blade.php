@@ -60,5 +60,20 @@
         </div>
         <!-- ./col -->
     </div>
+
+    <div id="donut-chart" style="height: 300px; padding: 0px; position: relative;">
+        <canvas class="flot-base" width="743" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.6px; height: 300px;"></canvas>
+        <canvas class="flot-overlay" width="743" height="375" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 594.6px; height: 300px;"></canvas>
+        <span class="pieLabel" id="pieLabel0" style="position: absolute; top: 70.6px; left: 355.9px;">
+            <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series2<br>30%</div>
+        </span>
+        <span class="pieLabel" id="pieLabel1" style="position: absolute; top: 210.6px; left: 333.9px;">
+            <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series3<br>20%</div></span>
+            <span class="pieLabel" id="pieLabel2" style="position: absolute; top: 129.6px; left: 174.9px;">
+                <div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">Series4<br>50%</div>
+            </span>
+        </div>
 </section>
+
+<script src="../../bower_components/Flot/jquery.flot.js"></script>
 @endsection
